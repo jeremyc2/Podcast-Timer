@@ -32,7 +32,6 @@ function build() {
                 if(time > 0) {
                     countdown.innerHTML = time;
                 } else {
-                    countdown.style.display = 'none';
                     clearInterval(interval);
                 }
             }, 1000);
