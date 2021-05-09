@@ -14,16 +14,29 @@ function build() {
         progress.innerHTML = `<div>${timer.text}</div>`;
         countdown.innerHTML = timer.seconds;
 
-        progress.style.transition = `${timer.seconds}s linear`;
+        const transition = progress.style.transition = `${timer.seconds}s linear`;
         progress.addEventListener('transitionend', () => {
             row.classList.remove('timer-running');
             row.classList.add('timer-finished');
+            progress.style.transition = '';
         });
 
         row.addEventListener('click', () => {
-            if(row.classList.contains('timer-running') || row.classList.contains('timer-finished')) return;
+            if(row.classList.contains('timer-running')) return;
 
-            row.classList.add('timer-running');
+            if(row.classList.contains('timer-finished')) {
+                row.classList.remove('timer-finished');
+                countdown.innerHTML = timer.seconds;
+
+                // We need the removed class 'timer-finished' to take effect first
+                setTimeout(() => {
+                    progress.style.transition = transition;
+                    row.classList.add('timer-running');
+                }, 0);
+
+            } else {
+                row.classList.add('timer-running');
+            }
 
             var time = timer.seconds;
 
