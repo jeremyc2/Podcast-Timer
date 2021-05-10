@@ -17,7 +17,7 @@
     width: 100px;
     border-radius: 50%;
     border: 2px solid black;
-    background: conic-gradient(var(--color) 0% var(--piePercent), white var(--piePercent) 100%);
+    background: conic-gradient(white 0% var(--piePercent), var(--color) var(--piePercent) 100%);
     overflow: hidden;
     transition: 0.01s linear;
 }
