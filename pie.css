@@ -1,0 +1,74 @@
+
+@property --piePercent {
+    syntax: "<percentage>";
+    initial-value: 0%;
+    inherits: false;
+}
+
+.pies {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px 0 5px 0;
+}
+
+.pie {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: conic-gradient(var(--color) 0% var(--piePercent), white var(--piePercent) 100%);
+    overflow: hidden;
+    transition: 0.01s linear;
+}
+
+.pie-15s {
+    --time: 15s;
+}
+
+.pie-30s {
+    --time: 30s;
+}
+
+.pie-60s {
+    --time: 60s;
+}
+
+.start-pie {
+    animation: timer-circle var(--time) linear 0s 1 forwards;
+}
+
+.pie::after {
+    content: attr(data-current-seconds);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.pie:nth-child(4n+1) {
+    --color: hsl(217, 89%, 61%);
+}
+
+.pie:nth-child(4n+2) {
+    --color: hsl(5, 69%, 54%);
+}
+
+.pie:nth-child(4n+3) {
+    --color: hsl(44, 100%, 48%);
+}
+
+.pie:nth-child(4n+0) {
+    --color: hsl(151, 83%, 34%);
+}
+
+@keyframes timer-circle {
+    to {
+        --piePercent: 100%;
+    }
+}

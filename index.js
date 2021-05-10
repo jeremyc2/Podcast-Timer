@@ -58,3 +58,34 @@ function build() {
 }
 
 document.addEventListener('data-loaded', build);
+
+document.querySelectorAll('.pie').forEach(pieTimer => {
+
+    var interval;
+
+    const time = parseInt(pieTimer.getAttribute('data-seconds'));
+    pieTimer.setAttribute('data-current-seconds', time);
+
+    pieTimer.addEventListener('click', function() {
+        this.style.animation = 'none';
+        this.offsetHeight; /* trigger reflow */
+        this.style.animation = '';
+        this.classList.add('start-pie');
+
+        if(interval != null) {
+            clearInterval(interval);
+        }
+
+        var currTime = time;
+        pieTimer.setAttribute('data-current-seconds', currTime);
+
+        interval = setInterval(() => {
+            currTime--;
+            if(currTime >= 0) {
+                pieTimer.setAttribute('data-current-seconds', currTime);
+            } else {
+                clearInterval(interval);
+            }
+        }, 1000);
+    });
+});
