@@ -7,8 +7,16 @@ body {
     margin: 0;
 }
 
-#timers {
-    margin-top: 110px;
+header {
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    padding: 5px;
+    margin: 0;
+    top: 0;
+    background: white;
+    z-index: 1;
+    font-family: Consolas, 'Courier New', monospace;
 }
 
 .row {

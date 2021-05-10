@@ -7,11 +7,6 @@
 
 .pies {
     display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    background: white;
     justify-content: space-evenly;
     padding: 5px 0 5px 0;
 }
