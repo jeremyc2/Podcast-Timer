@@ -38,11 +38,15 @@ body {
     padding: 0;
 }
 
-:is(.timer-running, .timer-finished) .progress {
+.start-countdown .progress {
+    animation: timer-row var(--time) linear 0s 1 forwards;
+}
+
+.end-countdown .progress {
     width: 100%;
 }
 
-.timer-finished .progress > div {
+.end-countdown .progress > div {
     color: black;
 }
 
@@ -60,7 +64,7 @@ body {
     border-bottom: 1px solid white;
 }
 
-.timer-finished .countdown {
+.end-countdown .countdown {
     display: none;
 }
 
@@ -82,4 +86,10 @@ body {
 
 .row:nth-child(4n+0) {
     --color: hsl(151, 83%, 34%);
+}
+
+@keyframes timer-row {
+    to {
+        width: 100%;
+    }
 }

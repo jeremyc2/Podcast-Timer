@@ -10,43 +10,39 @@ function build() {
         progress.classList.add('progress');
         countdown.classList.add('countdown');
 
+        var interval;
+
+        row.style.setProperty('--time', `${timer.seconds}s`);
+
         timerLabel.innerHTML = timer.text;
         progress.innerHTML = `<div>${timer.text}</div>`;
         countdown.innerHTML = timer.seconds;
-
-        const transition = progress.style.transition = `${timer.seconds}s linear`;
-        progress.addEventListener('transitionend', () => {
-            if(row.classList.contains('timer-running')) {
-                row.classList.remove('timer-running');
-                row.classList.add('timer-finished');
-                progress.style.transition = '0.01s linear';
-            } else {
-                progress.style.transition = transition;
-                row.classList.add('timer-running');
-            }
-        });
-
+    
         row.addEventListener('click', () => {
-            if(row.classList.contains('timer-running')) return;
 
-            if(row.classList.contains('timer-finished')) {
-                row.classList.remove('timer-finished');
-                countdown.innerHTML = timer.seconds;
-            } else {
-                row.classList.add('timer-running');
-            }
+            var currTime = countdown.innerHTML = timer.seconds;
 
-            var time = timer.seconds;
-
-            var interval = setInterval(() => {
-                time--;
-                if(time > 0) {
-                    countdown.innerHTML = time;
-                } else {
+            if(row.classList.contains('start-countdown') || row.classList.contains('end-countdown')) {
+                row.classList.remove('start-countdown');
+                row.classList.remove('end-countdown');
+                if(interval != null) {
                     clearInterval(interval);
                 }
+                return;
+            }
+    
+            row.classList.add('start-countdown');
+    
+            interval = setInterval(() => {
+                currTime--;
+                if(currTime > 0) {
+                    countdown.innerHTML = currTime;
+                } else {
+                    clearInterval(interval);
+                    row.classList.remove('start-countdown');
+                    row.classList.add('end-countdown');
+                }
             }, 1000);
-
         });
 
         timerLabel.appendChild(progress);
@@ -76,7 +72,6 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
             if(interval != null) {
                 clearInterval(interval);
             }
-
             return;
         }
 
