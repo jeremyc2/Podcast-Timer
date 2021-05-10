@@ -48,7 +48,7 @@ function build() {
         timerLabel.appendChild(progress);
         row.appendChild(timerLabel);
         row.appendChild(countdown);
-        app.appendChild(row);
+        timers.appendChild(row);
 
     });
 }
