@@ -25,6 +25,7 @@
     background: conic-gradient(white 0% var(--piePercent), var(--color) var(--piePercent) 100%);
     overflow: hidden;
     transition: 0.01s linear;
+    cursor: pointer;
 }
 
 .pie-15s {
