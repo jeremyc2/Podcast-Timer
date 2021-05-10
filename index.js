@@ -16,9 +16,14 @@ function build() {
 
         const transition = progress.style.transition = `${timer.seconds}s linear`;
         progress.addEventListener('transitionend', () => {
-            row.classList.remove('timer-running');
-            row.classList.add('timer-finished');
-            progress.style.transition = '';
+            if(row.classList.contains('timer-running')) {
+                row.classList.remove('timer-running');
+                row.classList.add('timer-finished');
+                progress.style.transition = '0.01s linear';
+            } else {
+                progress.style.transition = transition;
+                row.classList.add('timer-running');
+            }
         });
 
         row.addEventListener('click', () => {
@@ -27,13 +32,6 @@ function build() {
             if(row.classList.contains('timer-finished')) {
                 row.classList.remove('timer-finished');
                 countdown.innerHTML = timer.seconds;
-
-                // We need the removed class 'timer-finished' to take effect first
-                setTimeout(() => {
-                    progress.style.transition = transition;
-                    row.classList.add('timer-running');
-                }, 0);
-
             } else {
                 row.classList.add('timer-running');
             }
