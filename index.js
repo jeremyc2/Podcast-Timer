@@ -67,17 +67,20 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
     pieTimer.setAttribute('data-current-seconds', time);
 
     pieTimer.addEventListener('click', function() {
-        this.style.animation = 'none';
-        this.offsetHeight; /* trigger reflow */
-        this.style.animation = '';
-        this.classList.add('start-pie');
-
-        if(interval != null) {
-            clearInterval(interval);
-        }
 
         var currTime = time;
-        pieTimer.setAttribute('data-current-seconds', currTime);
+        pieTimer.setAttribute('data-current-seconds', time);
+
+        if(this.classList.contains('start-pie')) {
+            this.classList.remove('start-pie');
+            if(interval != null) {
+                clearInterval(interval);
+            }
+
+            return;
+        }
+
+        this.classList.add('start-pie');
 
         interval = setInterval(() => {
             currTime--;
