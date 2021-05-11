@@ -27,18 +27,6 @@
     filter: brightness(1.2);
 }
 
-.pie-15s {
-    --time: 15s;
-}
-
-.pie-30s {
-    --time: 30s;
-}
-
-.pie-60s {
-    --time: 60s;
-}
-
 .start-pie {
     animation: timer-circle var(--time) linear 0s 1 forwards;
 }

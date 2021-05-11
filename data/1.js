@@ -14,5 +14,8 @@ const data = deepFreeze([
     {
         time: "00:30",
         text: "Response"
+    },
+    {
+        text: "Hi"
     }
 ]);

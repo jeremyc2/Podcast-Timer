@@ -17,9 +17,16 @@ function decrementTime(timeMask) {
 }
 
 function toSeconds(timeMask) {
+
+    if(typeof timeMask !== 'string') return;
+
     var [minutes, seconds] = timeMask.split(':').map(t => parseInt(t));
 
-    return minutes * 60 + seconds;
+    var res = minutes * 60 + seconds;
+
+    if(isNaN(res)) return;
+
+    return res;
 }
 
 function timeIsZero(timeMask) {

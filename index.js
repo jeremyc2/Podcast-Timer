@@ -22,7 +22,11 @@ function build() {
 
         var interval;
 
-        row.style.setProperty('--time', `${toSeconds(timer.time)}s`);
+        const seconds = toSeconds(timer.time);
+
+        if(seconds == null) return;
+
+        row.style.setProperty('--time', `${seconds}s`);
 
         timerLabel.innerHTML = timer.text;
         progress.innerHTML = `<div>${timer.text}</div>`;
@@ -70,7 +74,12 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
 
     var interval;
 
-    const time = pieTimer.getAttribute('data-time');
+    const time = pieTimer.getAttribute('data-time'),
+            seconds = toSeconds(time);
+
+    if(seconds == null) return;
+
+    pieTimer.style.setProperty('--time', `${seconds}s`);
     pieTimer.setAttribute('data-current-time', time);
 
     pieTimer.addEventListener('click', function() {
