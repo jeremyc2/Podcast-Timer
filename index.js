@@ -50,6 +50,7 @@ function build() {
         row.appendChild(countdown);
         timers.appendChild(row);
 
+        row.style.setProperty('--timer-width', `${countdown.getBoundingClientRect().width}px`);
     });
 }
 

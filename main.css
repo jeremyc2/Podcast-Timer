@@ -42,8 +42,7 @@ header {
 
 .timer-label {
     position: relative;
-    /* FIXME */
-    width: calc(100vw - 6ch);
+    width: calc(100vw - var(--timer-width));
     background-color: var(--color);
     color: white;
 }
@@ -76,13 +75,10 @@ header {
 
 .progress > div {
     color: var(--color);
-    /* FIXME */
-    width: calc(100vw - 6ch);
+    width: calc(100vw - var(--timer-width));
 }
 
 .countdown {
-    /* FIXME (Hopefully remove me) */
-    width: 6ch;
     text-align: center;
     background-color: black;
     color: white;
