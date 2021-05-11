@@ -12,15 +12,15 @@ function build() {
 
         var interval;
 
-        row.style.setProperty('--time', `${timer.seconds}s`);
+        row.style.setProperty('--time', `${toSeconds(timer.time)}s`);
 
         timerLabel.innerHTML = timer.text;
         progress.innerHTML = `<div>${timer.text}</div>`;
-        countdown.innerHTML = timer.seconds;
+        countdown.innerHTML = timer.time;
     
         row.addEventListener('click', () => {
 
-            var currTime = countdown.innerHTML = timer.seconds;
+            var currTime = countdown.innerHTML = timer.time;
 
             if(row.classList.contains('start-countdown') || row.classList.contains('end-countdown')) {
                 row.classList.remove('start-countdown');
@@ -34,8 +34,8 @@ function build() {
             row.classList.add('start-countdown');
     
             interval = setInterval(() => {
-                currTime--;
-                if(currTime > 0) {
+                currTime = decrementTime(currTime);
+                if(!timeIsZero(currTime)) {
                     countdown.innerHTML = currTime;
                 } else {
                     clearInterval(interval);

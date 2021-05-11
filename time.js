@@ -15,3 +15,13 @@ function decrementTime(timeMask) {
 
     return `${minutes}:${seconds}`;
 }
+
+function toSeconds(timeMask) {
+    var [minutes, seconds] = timeMask.split(':').map(t => parseInt(t));
+
+    return minutes * 60 + seconds;
+}
+
+function timeIsZero(timeMask) {
+    return timeMask == '00:00';
+}

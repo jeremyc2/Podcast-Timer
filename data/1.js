@@ -1,18 +1,18 @@
 const data = deepFreeze([
     {
-        seconds: 5,
+        time: "00:05",
         text: "Introduction"
     },
     {
-        seconds: 60,
+        time: "01:00",
         text: "People don't realize the danger of Chrome Extensions"
     },
     {
-        seconds: 15,
+        time: "00:15",
         text: "Do you use Chrome Extensions? Why or why not?"
     },
     {
-        seconds: 30,
+        time: "00:30",
         text: "Response"
     }
 ]);

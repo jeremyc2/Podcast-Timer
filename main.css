@@ -42,7 +42,7 @@ header {
 
 .timer-label {
     position: relative;
-    width: calc(100vw - 3ch);
+    width: calc(100vw - 6ch);
     background-color: var(--color);
     color: white;
 }
@@ -75,11 +75,11 @@ header {
 
 .progress > div {
     color: var(--color);
-    width: calc(100vw - 3ch);
+    width: calc(100vw - 6ch);
 }
 
 .countdown {
-    width: 3ch;
+    width: 6ch;
     text-align: center;
     background-color: black;
     color: white;
