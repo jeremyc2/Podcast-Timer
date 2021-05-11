@@ -1,3 +1,13 @@
+function logWidths() {
+    document.querySelectorAll('.timer-label').forEach(el => {
+        const a = el.getBoundingClientRect().width,
+                b = el.querySelector('.progress div').getBoundingClientRect().width,
+                expected = document.body.getBoundingClientRect().width 
+                            - parseFloat(el.parentElement.style.getPropertyValue('--timer-width'));
+        console.log(`${a} (${expected})\n${b} (${expected})`);
+    });
+}
+
 function build() {
     data.forEach(timer => {
         const row = document.createElement('div'),
