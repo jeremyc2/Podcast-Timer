@@ -8,6 +8,28 @@ function logWidths() {
     });
 }
 
+function appendTimelessRow(row, timerLabel, countdown, text) {
+    timerLabel.innerHTML = text;
+    countdown.innerHTML = '&nbsp;&nbsp;-&nbsp;&nbsp;';
+    row.addEventListener('click', function() {
+        if(this.classList.contains('end-countdown')) {
+            this.classList.remove('end-countdown');
+            timerLabel.style.backgroundColor = '';
+            timerLabel.style.color = '';
+        } else {
+            this.classList.add('end-countdown');
+            timerLabel.style.backgroundColor = 'unset';
+            timerLabel.style.color = 'black';
+        }
+    });
+
+    row.appendChild(timerLabel);
+    row.appendChild(countdown);
+    timers.appendChild(row);
+
+    row.style.setProperty('--timer-width', `${countdown.getBoundingClientRect().width}px`);
+}
+
 function build() {
     data.forEach(timer => {
         const row = document.createElement('div'),
@@ -24,7 +46,11 @@ function build() {
 
         const seconds = toSeconds(timer.time);
 
-        if(seconds == null) return;
+        if(seconds == null) {
+            appendTimelessRow(row, timerLabel, countdown, timer.text);
+
+            return;
+        };
 
         row.style.setProperty('--time', `${seconds}s`);
 
@@ -77,7 +103,10 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
     const time = pieTimer.getAttribute('data-time'),
             seconds = toSeconds(time);
 
-    if(seconds == null) return;
+    if(seconds == null) {
+        // TODO
+        return;
+    };
 
     pieTimer.style.setProperty('--time', `${seconds}s`);
     pieTimer.setAttribute('data-current-time', time);
