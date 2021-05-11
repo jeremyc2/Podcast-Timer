@@ -23,6 +23,10 @@
     cursor: pointer;
 }
 
+.pie:hover {
+    filter: brightness(1.2);
+}
+
 .pie-15s {
     --time: 15s;
 }

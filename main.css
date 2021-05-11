@@ -32,6 +32,10 @@ header {
     cursor: pointer;
 }
 
+.row:not(.end-countdown):hover {
+    filter: brightness(1.2);
+}
+
 .row * {
     padding: 10px;
 }
