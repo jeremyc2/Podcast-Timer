@@ -95,8 +95,6 @@ function build() {
 
 function setupPieTimer(pieTimer) {
 
-    var interval;
-
     const time = pieTimer.getAttribute('data-time'),
             seconds = toSeconds(time);
 
@@ -107,39 +105,47 @@ function setupPieTimer(pieTimer) {
     pieTimer.style.setProperty('--time', `${seconds}s`);
     pieTimer.setAttribute('data-current-time', time);
 
-    pieTimer.addEventListener('click', function() {
-
-        var currTime = time;
-        pieTimer.setAttribute('data-current-time', time);
-
-        if(this.classList.contains('start-pie')) {
-            this.classList.remove('start-pie');
-            if(interval != null) {
-                clearInterval(interval);
-            }
-            return;
-        }
-
-        this.classList.add('start-pie');
-
-        interval = setInterval(() => {
-            currTime = decrementTime(currTime);
-            if(!timeIsZero(currTime)) {
-                pieTimer.setAttribute('data-current-time', currTime);
-            } else {
-                clearInterval(interval);
-                pieTimer.setAttribute('data-current-time', currTime);
-            }
-        }, 1000);
-    });
+    pieTimer.addEventListener('click', startPieTimer);
 }
 
-function appendPie(timeMask) {
-    const pie = document.createElement('div');
-    pie.classList.add("pie");
-    pie.setAttribute('data-time', timeMask);
-    setupPieTimer(pie);
-    pies.appendChild(pie);
+function startPieTimer() {
+
+    // TODO fix variables that are not defined
+
+    var currTime = time;
+    pieTimer.setAttribute('data-current-time', time);
+
+    if(this.classList.contains('start-pie')) {
+        this.classList.remove('start-pie');
+        if(pieTimer.interval != null) {
+            clearInterval(pieTimer.interval);
+        }
+        return;
+    }
+
+    this.classList.add('start-pie');
+
+    pieTimer.interval = setInterval(() => {
+        currTime = decrementTime(currTime);
+        if(!timeIsZero(currTime)) {
+            pieTimer.setAttribute('data-current-time', currTime);
+        } else {
+            clearInterval(pieTimer.interval);
+            pieTimer.setAttribute('data-current-time', currTime);
+        }
+    }, 1000);
+}
+
+function applyCustomPie(timeMask) {
+    const placeholder = pies.querySelector('.pie.placeholder-pie');
+
+    if(placeholder != null) {
+        placeholder.classList.remove('start-pie');
+        placeholder.removeEventListener('click', startPieTimer);
+        clearInterval(placeholder.interval);
+        placeholder.setAttribute('data-time', timeMask);
+        setupPieTimer(placeholder);
+    }
 }
 
 document.addEventListener('data-loaded', build);
