@@ -48,7 +48,6 @@ function build() {
 
         if(seconds == null) {
             appendTimelessRow(row, timerLabel, countdown, timer.text);
-
             return;
         };
 
