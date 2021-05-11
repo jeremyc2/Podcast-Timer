@@ -93,9 +93,7 @@ function build() {
     });
 }
 
-document.addEventListener('data-loaded', build);
-
-document.querySelectorAll('.pie').forEach(pieTimer => {
+function setupPieTimer(pieTimer) {
 
     var interval;
 
@@ -103,7 +101,6 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
             seconds = toSeconds(time);
 
     if(seconds == null) {
-        // TODO
         return;
     };
 
@@ -135,4 +132,16 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
             }
         }, 1000);
     });
-});
+}
+
+function appendPie(timeMask) {
+    const pie = document.createElement('div');
+    pie.classList.add("pie");
+    pie.setAttribute('data-time', timeMask);
+    setupPieTimer(pie);
+    pies.appendChild(pie);
+}
+
+document.addEventListener('data-loaded', build);
+
+document.querySelectorAll('.pie').forEach(setupPieTimer);
