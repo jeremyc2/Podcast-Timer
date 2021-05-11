@@ -70,13 +70,13 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
 
     var interval;
 
-    const time = parseInt(pieTimer.getAttribute('data-seconds'));
-    pieTimer.setAttribute('data-current-seconds', time);
+    const time = pieTimer.getAttribute('data-time');
+    pieTimer.setAttribute('data-current-time', time);
 
     pieTimer.addEventListener('click', function() {
 
         var currTime = time;
-        pieTimer.setAttribute('data-current-seconds', time);
+        pieTimer.setAttribute('data-current-time', time);
 
         if(this.classList.contains('start-pie')) {
             this.classList.remove('start-pie');
@@ -89,11 +89,12 @@ document.querySelectorAll('.pie').forEach(pieTimer => {
         this.classList.add('start-pie');
 
         interval = setInterval(() => {
-            currTime--;
-            if(currTime >= 0) {
-                pieTimer.setAttribute('data-current-seconds', currTime);
+            currTime = decrementTime(currTime);
+            if(!timeIsZero(currTime)) {
+                pieTimer.setAttribute('data-current-time', currTime);
             } else {
                 clearInterval(interval);
+                pieTimer.setAttribute('data-current-time', currTime);
             }
         }, 1000);
     });

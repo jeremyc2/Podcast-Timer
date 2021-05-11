@@ -44,7 +44,7 @@
 }
 
 .pie::after {
-    content: attr(data-current-seconds);
+    content: attr(data-current-time);
     position: absolute;
     bottom: 10px;
     left: 50%;
