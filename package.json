@@ -2,8 +2,9 @@
   "name": "podcast-timer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "new-template.js",
   "scripts": {
+    "new-template": "node new-template.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
