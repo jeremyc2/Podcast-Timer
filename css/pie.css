@@ -12,6 +12,10 @@
     gap: 25px;
 }
 
+#pies > div {
+    position: relative;
+}
+
 .pie {
     position: relative;
     height: 100px;
@@ -24,7 +28,7 @@
     cursor: pointer;
 }
 
-.pie:hover {
+.pie:hover, .edit-pie:hover {
     filter: brightness(1.2);
 }
 
@@ -45,19 +49,35 @@
     text-align: center;
 }
 
-.pie:nth-child(4n+1) {
+.edit-pie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: var(--color);
+    background-image: url(../img/edit_black_24dp.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    cursor: pointer;
+}
+
+#pies > div:nth-child(4n+1) {
     --color: hsl(217, 89%, 61%);
 }
 
-.pie:nth-child(4n+2) {
+#pies > div:nth-child(4n+2) {
     --color: hsl(5, 69%, 54%);
 }
 
-.pie:nth-child(4n+3) {
+#pies > div:nth-child(4n+3) {
     --color: hsl(44, 100%, 48%);
 }
 
-.pie:nth-child(4n+0) {
+#pies > div:nth-child(4n+0) {
     --color: hsl(151, 83%, 34%);
 }
 
