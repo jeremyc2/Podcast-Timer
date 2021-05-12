@@ -1,4 +1,4 @@
-const id = new URLSearchParams(document.location.search).get("id") ?? 1,
+const id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
         datasource = document.querySelector("#datasource");
 
 datasource.addEventListener('load', () => {

@@ -34,6 +34,7 @@ rl.question("New podcast template? (yes) ", res => {
         }
 
         fs.writeFileSync(`data/${nextFile}.js`, template);
+        fs.writeFileSync('javascript/default-id.js', `const defaultId = ${nextFile};`);
 
         console.log(`data/${nextFile}.js has been added`);
 
