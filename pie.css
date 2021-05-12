@@ -7,8 +7,9 @@
 
 #pies {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 5px 0 5px 0;
+    gap: 25px;
 }
 
 .pie {
