@@ -135,14 +135,12 @@ function startPieTimer(pieTimer, time) {
     }, 1000);
 }
 
-function applyCustomPie(timeMask) {
-    const placeholder = pies.querySelector('.pie.placeholder-pie');
-
-    if(placeholder != null) {
-        placeholder.classList.remove('start-pie');
-        clearInterval(placeholder.interval);
-        placeholder.setAttribute('data-time', timeMask);
-        setupPieTimer(placeholder);
+function setCustomPieTime(pieTimer, timeMask) {
+    if(pieTimer != null) {
+        pieTimer.classList.remove('start-pie');
+        clearInterval(pieTimer.interval);
+        pieTimer.setAttribute('data-time', timeMask);
+        setupPieTimer(pieTimer);
     }
 }
 
