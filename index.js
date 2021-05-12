@@ -105,34 +105,32 @@ function setupPieTimer(pieTimer) {
     pieTimer.style.setProperty('--time', `${seconds}s`);
     pieTimer.setAttribute('data-current-time', time);
 
-    pieTimer.onclick = () => startPieTimer(pieTimer, time);
+    pieTimer.onclick = () => {
 
-}
-
-function startPieTimer(pieTimer, time) {
-
-    var currTime = time;
-    pieTimer.setAttribute('data-current-time', time);
-
-    if(pieTimer.classList.contains('start-pie')) {
-        pieTimer.classList.remove('start-pie');
-        if(pieTimer.interval != null) {
-            clearInterval(pieTimer.interval);
+        var currTime = time;
+        pieTimer.setAttribute('data-current-time', time);
+    
+        if(pieTimer.classList.contains('start-pie')) {
+            pieTimer.classList.remove('start-pie');
+            if(pieTimer.interval != null) {
+                clearInterval(pieTimer.interval);
+            }
+            return;
         }
-        return;
+    
+        pieTimer.classList.add('start-pie');
+    
+        pieTimer.interval = setInterval(() => {
+            currTime = decrementTime(currTime);
+            if(!timeIsZero(currTime)) {
+                pieTimer.setAttribute('data-current-time', currTime);
+            } else {
+                clearInterval(pieTimer.interval);
+                pieTimer.setAttribute('data-current-time', currTime);
+            }
+        }, 1000);
     }
 
-    pieTimer.classList.add('start-pie');
-
-    pieTimer.interval = setInterval(() => {
-        currTime = decrementTime(currTime);
-        if(!timeIsZero(currTime)) {
-            pieTimer.setAttribute('data-current-time', currTime);
-        } else {
-            clearInterval(pieTimer.interval);
-            pieTimer.setAttribute('data-current-time', currTime);
-        }
-    }, 1000);
 }
 
 function setCustomPieTime(pieTimer, timeMask) {
