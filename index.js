@@ -105,25 +105,24 @@ function setupPieTimer(pieTimer) {
     pieTimer.style.setProperty('--time', `${seconds}s`);
     pieTimer.setAttribute('data-current-time', time);
 
-    pieTimer.addEventListener('click', startPieTimer);
+    pieTimer.onclick = () => startPieTimer(pieTimer, time);
+
 }
 
-function startPieTimer() {
-
-    // TODO fix variables that are not defined
+function startPieTimer(pieTimer, time) {
 
     var currTime = time;
     pieTimer.setAttribute('data-current-time', time);
 
-    if(this.classList.contains('start-pie')) {
-        this.classList.remove('start-pie');
+    if(pieTimer.classList.contains('start-pie')) {
+        pieTimer.classList.remove('start-pie');
         if(pieTimer.interval != null) {
             clearInterval(pieTimer.interval);
         }
         return;
     }
 
-    this.classList.add('start-pie');
+    pieTimer.classList.add('start-pie');
 
     pieTimer.interval = setInterval(() => {
         currTime = decrementTime(currTime);
@@ -141,7 +140,6 @@ function applyCustomPie(timeMask) {
 
     if(placeholder != null) {
         placeholder.classList.remove('start-pie');
-        placeholder.removeEventListener('click', startPieTimer);
         clearInterval(placeholder.interval);
         placeholder.setAttribute('data-time', timeMask);
         setupPieTimer(placeholder);
