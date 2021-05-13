@@ -14,8 +14,16 @@
         <script src="javascript/main.js" defer></script>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/pie.css">
+        <link rel="stylesheet" href="css/pie-input.css">
     </head>
     <body>
+        <template id="template-edit-pie">
+            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+            <span class="separator">:</span>
+            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+        </template>
         <header>
             <h2>Podcast Timers</h2>
             <div id="pies">

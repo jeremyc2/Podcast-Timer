@@ -1,0 +1,20 @@
+.pie input {
+    border: none;
+    border-bottom: solid black 2px;
+    width: 1ch;
+    font-weight: bold;
+}
+
+.pie input::-webkit-outer-spin-button,
+.pie input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.pie input:focus {
+    outline: none;
+}
+
+.pie .separator {
+    font-weight: bold;
+}

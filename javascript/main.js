@@ -149,6 +149,8 @@ document.querySelectorAll('.edit-pie').forEach(el => {
         const timer = this.previousElementSibling;
         // TODO Update Placeholder
         // setCustomPieTime(timer, '01:44');
-        alert('Under Construction');
+        var template = document.querySelector('#template-edit-pie');
+        timer.querySelector('div').innerHTML = template.innerHTML;
+        alert('Under Construction. If buggy, please refresh the page');
     });
 });
