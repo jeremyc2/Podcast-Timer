@@ -66,19 +66,19 @@
 }
 
 #pies > div:nth-child(4n+1) {
-    --color: hsl(217, 89%, 61%);
+    --color: hsl(336, 95%, 62%);
 }
 
 #pies > div:nth-child(4n+2) {
-    --color: hsl(5, 69%, 54%);
+    --color: hsl(169, 46%, 49%);
 }
 
 #pies > div:nth-child(4n+3) {
-    --color: hsl(44, 100%, 48%);
+    --color: hsl(265, 65%, 32%);
 }
 
 #pies > div:nth-child(4n+0) {
-    --color: hsl(151, 83%, 34%);
+    --color: hsl(40, 99%, 67%);
 }
 
 @keyframes timer-circle {
