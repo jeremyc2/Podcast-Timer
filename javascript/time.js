@@ -32,3 +32,10 @@ function toSeconds(timeMask) {
 function timeIsZero(timeMask) {
     return timeMask == '00:00';
 }
+
+function addSeconds(data) {
+    data = data.map(timer => toSeconds(timer.time));
+    const seconds = data.reduce((a, b) => a + b, 0);
+    console.log(seconds);
+    console.log(`${Math.floor(seconds / 60)}`.padStart(2, '0') + ':' + `${seconds % 60}`.padStart(2, '0'));
+}
