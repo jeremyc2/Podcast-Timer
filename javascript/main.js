@@ -145,3 +145,11 @@ function setCustomPieTime(pieTimer, timeMask) {
 document.addEventListener('data-loaded', build);
 
 document.querySelectorAll('.pie').forEach(setupPieTimer);
+
+document.querySelectorAll('.edit-pie').forEach(el => {
+    el.addEventListener('click', function() {
+        const timer = this.previousElementSibling;
+        // TODO Update Placeholder
+        setCustomPieTime(timer, '01:44');
+    });
+});
