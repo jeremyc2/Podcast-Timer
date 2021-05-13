@@ -25,10 +25,14 @@ const data = deepFreeze([
     },
     {
         time: "00:15",
-        text: "[To Justin] And now I ask you, do you even imagine it's ideal to have one IDE to rule them all? Explain."
+        text: "[To Justin] Now, do you even think it's ideal to have one IDE to rule them all? Explain."
     },
     {
         time: "02:00",
         text: "[Justin's Response]"
+    },
+    {
+        time: "00:15",
+        text: "Lamenting a little the lack of ABAP support in VS Code"
     }
 ]);
