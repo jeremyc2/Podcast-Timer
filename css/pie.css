@@ -36,7 +36,7 @@
     animation: timer-circle var(--time) linear 0s 1 forwards;
 }
 
-.pie::after {
+.pie > div {
     content: attr(data-current-time);
     position: absolute;
     bottom: 10px;

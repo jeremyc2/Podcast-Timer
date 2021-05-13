@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pie2.css">
+    <style>
+        input {
+            border: none;
+            border-bottom: solid black 2px;
+            width: 1ch;
+            font-weight: bold;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .separator {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="pie" data-time="02:30"></div>
+        <div class="edit-pie"></div>
+    </div>
+    <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+    <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+    <span class="separator">:</span>
+    <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+    <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+</body>
+</html>

@@ -103,12 +103,12 @@ function setupPieTimer(pieTimer) {
     };
 
     pieTimer.style.setProperty('--time', `${seconds}s`);
-    pieTimer.setAttribute('data-current-time', time);
+    pieTimer.querySelector('div').innerHTML = time;
 
     pieTimer.onclick = () => {
 
         var currTime = time;
-        pieTimer.setAttribute('data-current-time', time);
+        pieTimer.querySelector('div').innerHTML = time;
     
         if(pieTimer.classList.contains('start-pie')) {
             pieTimer.classList.remove('start-pie');
@@ -122,12 +122,10 @@ function setupPieTimer(pieTimer) {
     
         pieTimer.interval = setInterval(() => {
             currTime = decrementTime(currTime);
-            if(!timeIsZero(currTime)) {
-                pieTimer.setAttribute('data-current-time', currTime);
-            } else {
+            if(timeIsZero(currTime)) {
                 clearInterval(pieTimer.interval);
-                pieTimer.setAttribute('data-current-time', currTime);
             }
+            pieTimer.querySelector('div').innerHTML = currTime;
         }, 1000);
     }
 
