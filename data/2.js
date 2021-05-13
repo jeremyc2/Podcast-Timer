@@ -32,7 +32,19 @@ const data = deepFreeze([
         text: "[Justin's Response]"
     },
     {
-        time: "00:15",
+        time: "00:30",
         text: "Lamenting a little the lack of ABAP support in VS Code"
+    },
+    {
+        time: "00:15",
+        text: "[Funzie] Any cool VS Code extensions you discovered recently?"
+    },
+    {
+        time: "01:00",
+        text: "[Justin's Response]"
+    },
+    {
+        time: "01:00",
+        text: "Here are some I found..."
     }
 ]);
