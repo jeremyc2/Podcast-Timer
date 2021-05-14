@@ -19,9 +19,9 @@
     <body>
         <template id="template-edit-pie">
             <div class="edit-pie-container" tabindex="0" onclick="event.stopPropagation()" style="cursor: initial; display: inline-flex;">
-                <input class="edit-pie-input" type="text" size="1" maxlength="2" value="00" onfocus="this.select()" onblur="validateEditPie(this)">
+                <input class="edit-pie-input" type="text" size="1" maxlength="2" value="00" onfocus="this.select()" onblur="validateEditPie(this)" onkeyup="if(event.key == 'Enter') this.blur()">
                 <span class="separator">:</span>
-                <input class="edit-pie-input" type="text" size="1" maxlength="2" value="00" onfocus="this.select()" onblur="validateEditPie(this)">
+                <input class="edit-pie-input" type="text" size="1" maxlength="2" value="00" onfocus="this.select()" onblur="validateEditPie(this)" onkeyup="if(event.key == 'Enter') this.blur()">
             </div>
         </template>
         <header>

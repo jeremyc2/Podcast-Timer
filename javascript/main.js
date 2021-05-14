@@ -155,6 +155,8 @@ document.querySelectorAll('.pie').forEach(setupPieTimer);
 document.querySelectorAll('.edit-pie').forEach(el => {
     el.addEventListener('click', function() {
         const timer = this.previousElementSibling;
+        timer.classList.remove('start-pie');
+        clearInterval(timer.interval);
         var template = document.querySelector('#template-edit-pie');
         timer.querySelector('div').innerHTML = template.innerHTML;
         timer.querySelectorAll('.edit-pie-container, input').forEach(el => {
