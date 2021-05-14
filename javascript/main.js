@@ -148,6 +148,12 @@ function validateEditPie(pieInput) {
     pieInput.value = pieInput.value.padStart(2, '0');
 }
 
+function allowDigitOnly(e) {
+        if(e.key == 'Backspace' || e.key == 'Tab' || e.key == 'Enter') return;
+        if(/^[1234567890]$/.test(e.key)) return;
+        e.preventDefault();
+}
+
 document.addEventListener('data-loaded', build);
 
 document.querySelectorAll('.pie').forEach(setupPieTimer);
