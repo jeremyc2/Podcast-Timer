@@ -1,8 +1,10 @@
 .pie input {
     border: none;
-    border-bottom: solid black 2px;
-    width: 1ch;
-    font-weight: bold;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    text-decoration: underline;
 }
 
 .pie input::-webkit-outer-spin-button,

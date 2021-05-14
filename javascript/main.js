@@ -140,6 +140,14 @@ function setCustomPieTime(pieTimer, timeMask) {
     }
 }
 
+function validateEditPie(pieInput) {
+    if(pieInput.value.trim() == '') {
+        pieInput.value = '00';
+        return;
+    }
+    pieInput.value = pieInput.value.padStart(2, '0');
+}
+
 document.addEventListener('data-loaded', build);
 
 document.querySelectorAll('.pie').forEach(setupPieTimer);
@@ -147,10 +155,22 @@ document.querySelectorAll('.pie').forEach(setupPieTimer);
 document.querySelectorAll('.edit-pie').forEach(el => {
     el.addEventListener('click', function() {
         const timer = this.previousElementSibling;
-        // TODO Update Placeholder
-        // setCustomPieTime(timer, '01:44');
         var template = document.querySelector('#template-edit-pie');
         timer.querySelector('div').innerHTML = template.innerHTML;
-        alert('Under Construction. If buggy, please refresh the page');
+        timer.querySelectorAll('.edit-pie-container, input').forEach(el => {
+            el.addEventListener('blur', function(e) {
+                const time = [...timer.querySelectorAll('input')].map(input => input.value);
+                if(!e.relatedTarget?.classList.contains('edit-pie-input')) {
+                    const newTime = `${time[0]}:${time[1]}`;
+
+                    if(newTime == '00:00') {
+                        setCustomPieTime(timer, timer.getAttribute('data-time'));
+                    } else {
+                        setCustomPieTime(timer, `${time[0]}:${time[1]}`);
+                    }
+                }
+            });
+        });
+        timer.querySelector('input').focus();
     });
 });

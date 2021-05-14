@@ -18,11 +18,11 @@
     </head>
     <body>
         <template id="template-edit-pie">
-            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
-            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
-            <span class="separator">:</span>
-            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
-            <input type="number" value="0" onfocus="this.select()" onblur="this.value == ''? this.value = 0: null">
+            <div class="edit-pie-container" tabindex="0" onclick="event.stopPropagation()" style="cursor: initial; display: inline-flex;">
+                <input class="edit-pie-input" type="text" size="1" maxlength="2" value="00" onfocus="this.select()" onblur="validateEditPie(this)">
+                <span class="separator">:</span>
+                <input class="edit-pie-input" type="text" size="1" maxlength="2" value="00" onfocus="this.select()" onblur="validateEditPie(this)">
+            </div>
         </template>
         <header>
             <h2>Podcast Timers</h2>
