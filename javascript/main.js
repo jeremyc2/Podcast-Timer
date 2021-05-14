@@ -17,6 +17,7 @@ function appendTimelessRow(row, timerLabel, countdown, text) {
             timerLabel.style.backgroundColor = '';
             timerLabel.style.color = '';
         } else {
+            channel.postMessage(text);
             this.classList.add('end-countdown');
             timerLabel.style.backgroundColor = 'unset';
             timerLabel.style.color = 'black';
@@ -71,6 +72,7 @@ function build() {
             }
     
             row.classList.add('start-countdown');
+            channel.postMessage(timer.text);
     
             interval = setInterval(() => {
                 currTime = decrementTime(currTime);
@@ -153,6 +155,8 @@ function allowDigitOnly(e) {
         if(/^[1234567890]$/.test(e.key)) return;
         e.preventDefault();
 }
+
+const channel = new BroadcastChannel('app-data');
 
 document.addEventListener('data-loaded', build);
 
