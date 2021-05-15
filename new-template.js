@@ -10,7 +10,9 @@ const template =
 `const data = deepFreeze([
     {
         time: "00:00",
-        text: "placeholder text"
+        content: {
+            label: "Placeholder"
+        }
     }
 ]);`;
 

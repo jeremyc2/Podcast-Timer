@@ -8,8 +8,8 @@ function logWidths() {
     });
 }
 
-function appendTimelessRow(row, timerLabel, countdown, text) {
-    timerLabel.innerHTML = text;
+function appendTimelessRow(row, timerLabel, countdown, content) {
+    timerLabel.innerHTML = content.label;
     countdown.innerHTML = '&nbsp;&nbsp;-&nbsp;&nbsp;';
     row.addEventListener('click', function() {
         if(this.classList.contains('end-countdown')) {
@@ -17,7 +17,7 @@ function appendTimelessRow(row, timerLabel, countdown, text) {
             timerLabel.style.backgroundColor = '';
             timerLabel.style.color = '';
         } else {
-            channel.postMessage(text);
+            channel.postMessage(content.detailsFile);
             this.classList.add('end-countdown');
             timerLabel.style.backgroundColor = 'unset';
             timerLabel.style.color = 'black';
@@ -48,14 +48,14 @@ function build() {
         const seconds = toSeconds(timer.time);
 
         if(seconds == null) {
-            appendTimelessRow(row, timerLabel, countdown, timer.text);
+            appendTimelessRow(row, timerLabel, countdown, timer.content);
             return;
         };
 
         row.style.setProperty('--time', `${seconds}s`);
 
-        timerLabel.innerHTML = timer.text;
-        progress.innerHTML = `<div>${timer.text}</div>`;
+        timerLabel.innerHTML = timer.content.label;
+        progress.innerHTML = `<div>${timer.content.label}</div>`;
         countdown.innerHTML = timer.time;
     
         row.addEventListener('click', () => {
@@ -72,7 +72,7 @@ function build() {
             }
     
             row.classList.add('start-countdown');
-            channel.postMessage(timer.text);
+            channel.postMessage(timer.content.detailsFile);
     
             interval = setInterval(() => {
                 currTime = decrementTime(currTime);
