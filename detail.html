@@ -11,6 +11,8 @@
         channel.addEventListener ('message', (event) => {
             if(typeof event.data !== 'undefined') {
                 document.querySelector('#app code').innerHTML = event.data;
+            } else {
+                document.querySelector('#app code').innerHTML = '';
             }
         });
     </script>
