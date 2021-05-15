@@ -5,4 +5,4 @@ datasource.addEventListener('load', () => {
     document.dispatchEvent(new Event('data-loaded'));
 });
 
-datasource.src = `data/${id}.js`;
+datasource.src = `data/main/${id}.js`;

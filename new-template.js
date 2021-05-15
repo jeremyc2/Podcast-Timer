@@ -18,7 +18,7 @@ const template =
 
 rl.question("New podcast template? (yes) ", res => {
     if(res == "" || res.trim().toLowerCase() == "yes") {
-        var entries = fs.readdirSync("data/").map(file => {
+        var entries = fs.readdirSync("data/main/").map(file => {
             const match = file.match(/^(\d*)\.js$/);
 
             if(match == null) throw "Invalid filename";
@@ -35,10 +35,10 @@ rl.question("New podcast template? (yes) ", res => {
             nextFile = Math.max(...entries) + 1;
         }
 
-        fs.writeFileSync(`data/${nextFile}.js`, template);
+        fs.writeFileSync(`data/main/${nextFile}.js`, template);
         fs.writeFileSync('javascript/default-id.js', `const defaultId = ${nextFile};`);
 
-        console.log(`data/${nextFile}.js has been added`);
+        console.log(`data/main/${nextFile}.js has been added`);
 
     }
     rl.close();
