@@ -11,10 +11,10 @@
         channel.addEventListener ('message', (event) => {
             if(typeof event.data !== 'undefined') {
                 fetch(`data/details/${event.data}`).then(res => res.text()).then(res => {
-                    document.querySelector('#app code').innerHTML = res;
+                    document.querySelector('#app code pre').innerText = res;
                 });
             } else {
-                document.querySelector('#app code').innerHTML = '';
+                document.querySelector('#app code pre').innerText = '';
             }
         });
     </script>
@@ -28,7 +28,9 @@
 <body>
     <div id="app">
         <code>
+            <pre>
 
+            </pre>
         </code>
     </div>
 </body>
