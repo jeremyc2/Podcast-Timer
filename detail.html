@@ -9,7 +9,7 @@
     <script>
         const channel = new BroadcastChannel('app-data');
         channel.addEventListener ('message', (event) => {
-            if(typeof event.data === 'undefined') {
+            if(typeof event.data !== 'undefined') {
                 document.querySelector('#app code').innerHTML = event.data;
             }
         });

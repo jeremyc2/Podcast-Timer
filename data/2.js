@@ -8,7 +8,8 @@ const data = deepFreeze([
     {
         time: "00:20",
         content: {
-            label: "I've grown quite attached to Visual Studio Code, also known as VS Code"
+            label: "I've grown quite attached to Visual Studio Code, also known as VS Code",
+            detailsFile: "2-2.txt"
         }
     },
     {
