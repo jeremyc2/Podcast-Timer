@@ -29,6 +29,18 @@ header {
                 0 16px 16px rgba(0,0,0,0.12);
 }
 
+#notes-icon {
+    position: absolute;
+    background: dodgerblue;
+    right: 0;
+    top: 0;
+    padding: 10px;
+}
+
+#notes-icon:hover {
+    filter: brightness(1.2);
+}
+
 #timers {
     overflow: overlay;
 }
