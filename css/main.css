@@ -38,6 +38,7 @@ header > h2 {
     right: 0;
     top: 0;
     padding: 10px;
+    border-radius: 0 0 0 15px;
 }
 
 #notes-icon:hover {
@@ -49,7 +50,8 @@ header > h2 {
 }
 
 #totalTime {
-    background: black;
+    box-shadow: inset 0px -13px 8px 0px black;
+    background-color: #272727;
     color: white;
     height: fit-content;
     padding: 3px;
