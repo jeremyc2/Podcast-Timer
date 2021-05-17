@@ -65,10 +65,12 @@ function build() {
 
             var runningTime = '00:00';
             this.setAttribute('data-time', runningTime);
-            totalTime.innerText = `Total Time: ${incrementTime(row.getAttribute('data-time'))}`;
+            totalTime.innerText = `Total Time: ${runningTime}`;
 
             this.totalTimeInterval = setInterval(() => {
-                totalTime.innerText = `Total Time: ${incrementTime(row.getAttribute('data-time'))}`;
+                runningTime = incrementTime(runningTime);
+                row.setAttribute('data-time', runningTime);
+                totalTime.innerText = `Total Time: ${runningTime}`;
             }, 1000);
         });
     
