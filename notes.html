@@ -9,13 +9,16 @@
     <script>
         const channel = new BroadcastChannel('app-data');
         channel.addEventListener ('message', (event) => {
-            if(typeof event.data !== 'undefined') {
-                fetch(`data/details/${event.data}`).then(res => res.text()).then(res => {
-                    document.querySelector('#app code pre').innerText = res;
-                });
-            } else {
+
+            if(typeof event.data !== 'string' || event.data == '') {
                 document.querySelector('#app code pre').innerText = '';
-            }
+                return;
+            };
+
+            fetch(`data/details/${event.data}`).then(res => res.text()).then(res => {
+                document.querySelector('#app code pre').innerText = res;
+            });
+
         });
     </script>
     <style>
