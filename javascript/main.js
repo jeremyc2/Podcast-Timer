@@ -17,7 +17,10 @@ function appendTimelessRow(row, timerLabel, countdown, content) {
             timerLabel.style.backgroundColor = '';
             timerLabel.style.color = '';
         } else {
-            channel.postMessage(content.detailsFile);
+            if(typeof content.detailsFilename != 'string' && 
+                content.detailsFilename != '') {
+                    channel.postMessage(content.detailsFilename);
+            }
             this.classList.add('end-countdown');
             timerLabel.style.backgroundColor = 'unset';
             timerLabel.style.color = 'black';
@@ -70,10 +73,13 @@ function build() {
                 }
                 return;
             }
-    
+
             row.classList.add('start-countdown');
-            channel.postMessage(timer.content.detailsFile);
-    
+            if(typeof timer.content.detailsFilename != 'string' &&
+                timer.content.detailsFilename != '') {
+                    channel.postMessage(timer.content.detailsFilename);
+            }
+
             interval = setInterval(() => {
                 currTime = decrementTime(currTime);
                 if(!timeIsZero(currTime)) {
