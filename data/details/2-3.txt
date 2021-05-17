@@ -1,3 +1,5 @@
+Webdev simplified
+
 Live Server
 Markdown All in one
 Run on Save
@@ -7,3 +9,4 @@ Flutter
 Code Spell Checker
 
 Order a pizza
+GitLens--Git supercharged
