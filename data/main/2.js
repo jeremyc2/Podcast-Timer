@@ -6,10 +6,16 @@ const data = deepFreeze([
         }
     },
     {
+        time: "03:00",
+        content: {
+            label: "Last week catchup"
+        }
+    },
+    {
         time: "00:20",
         content: {
             label: "I've grown quite attached to Visual Studio Code, also known as VS Code",
-            detailsFilename: "2-2.txt"
+            notes: "2-2.txt"
         }
     },
     {
