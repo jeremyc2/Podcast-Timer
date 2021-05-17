@@ -17,7 +17,7 @@ function appendTimelessRow(row, timerLabel, countdown, content) {
             timerLabel.style.backgroundColor = '';
             timerLabel.style.color = '';
         } else {
-            if(typeof content.detailsFilename != 'string' && 
+            if(typeof content.detailsFilename != 'string' || 
                 content.detailsFilename != '') {
                     channel.postMessage(content.detailsFilename);
             }
@@ -75,7 +75,7 @@ function build() {
             }
 
             row.classList.add('start-countdown');
-            if(typeof timer.content.detailsFilename != 'string' &&
+            if(typeof timer.content.detailsFilename != 'string' ||
                 timer.content.detailsFilename != '') {
                     channel.postMessage(timer.content.detailsFilename);
             }
