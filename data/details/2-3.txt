@@ -1,0 +1,7 @@
+Live Server
+Markdown All in one
+Run on Save
+Code Runner
+Dart
+Flutter
+Code Spell Checker

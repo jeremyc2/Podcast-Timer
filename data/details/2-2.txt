@@ -1,4 +1,6 @@
-I literally use it all the time. In the past I've used Sublime Text, and Atom (now owned by Github), I've used Visual Studio, and XCode. I've used PyCharm and Android Studio. I've even used EMacs and Notepad++. 
+I literally use it all the time. In the past I've used Sublime Text, and Atom (now owned by Github), I've used Visual Studio, Intellij, and XCode. I've used PyCharm and Android Studio. I've even used EMacs and Notepad++. 
 
 Side note: I've seen YouTube videos where people code in MS Word and I can't help but think it's some kind of joke.
+
+Microsoft has built out a ton of extensions for Java programming
 
