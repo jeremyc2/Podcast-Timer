@@ -59,14 +59,16 @@ function build() {
         countdown.innerHTML = timer.time;
 
         row.addEventListener('click', function() {
-            if(totalTime.innerText.trim() != '') return;
+            if(totalTime.innerText.trim() != 'Make a selection below to start the clock') return;
 
             clearInterval(this.totalTimeInterval);
 
-            totalTime.innerText = '00:00';
+            var runningTime = '00:00';
+            this.setAttribute('data-time', runningTime);
+            totalTime.innerText = `Total Time: ${incrementTime(row.getAttribute('data-time'))}`;
 
             this.totalTimeInterval = setInterval(() => {
-                totalTime.innerText = incrementTime(totalTime.innerText);
+                totalTime.innerText = `Total Time: ${incrementTime(row.getAttribute('data-time'))}`;
             }, 1000);
         });
     
