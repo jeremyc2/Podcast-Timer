@@ -1,0 +1,1 @@
+I literally use it all the time. In the past I've used Sublime Text, and Atom (now owned by Github), I've used Visual Studio, and XCode. I've used PyCharm and Android Studio. I've even used EMacs and Notepad++. 
