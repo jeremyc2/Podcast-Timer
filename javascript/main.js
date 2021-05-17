@@ -57,6 +57,18 @@ function build() {
         timerLabel.innerHTML = timer.content.label;
         progress.innerHTML = `<div>${timer.content.label}</div>`;
         countdown.innerHTML = timer.time;
+
+        row.addEventListener('click', function() {
+            if(totalTime.innerText.trim() != '') return;
+
+            clearInterval(this.totalTimeInterval);
+
+            totalTime.innerText = '00:00';
+
+            this.totalTimeInterval = setInterval(() => {
+                totalTime.innerText = incrementTime(totalTime.innerText);
+            }, 1000);
+        });
     
         row.addEventListener('click', () => {
 
