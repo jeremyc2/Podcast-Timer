@@ -58,8 +58,10 @@ function build() {
         progress.innerHTML = `<div>${timer.content.label}</div>`;
         countdown.innerHTML = timer.time;
 
+        const defaultTotalTimeLabel = totalTime.innerText;
+
         row.addEventListener('click', function() {
-            if(totalTime.innerText.trim() != 'Make a selection below to start the clock') return;
+            if(totalTime.innerText.trim() != defaultTotalTimeLabel) return;
 
             clearInterval(this.totalTimeInterval);
 
