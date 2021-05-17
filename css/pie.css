@@ -8,7 +8,7 @@
 #pies {
     display: flex;
     justify-content: center;
-    padding: 5px 0 5px 0;
+    padding-bottom: 10px;
     gap: 25px;
 }
 
