@@ -1,3 +1,4 @@
+// TODO Make words per minute
 const secondsPerLine = .1,
     container = document.querySelector('#app code pre');
 
