@@ -29,16 +29,25 @@ function getCharacterDimensions() {
     return {height, width};
 }
 
-function calcMilliseconds() {
+// Seconds per line to milliseconds for scrolling
+function splToMilliseconds() {
 
     if(app.clientHeight == app.scrollHeight) return 0;
 
-    const { height, width } = getCharacterDimensions();
+    const { height } = getCharacterDimensions();
 
-    // TODO Calc milliseconds from words per minute not seconds per line
     const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / height;
     
     return milliseconds;
+}
+
+// Seconds per line to milliseconds for scrolling
+function wpmToMilliseconds() {
+    const text = document.querySelector('#app code pre').innerText,
+        length = text.length;
+
+    // TODO calculate Milliseconds
+    // app.scrollHeight * ;
 }
 
 function stopScroll() {
@@ -48,7 +57,7 @@ function stopScroll() {
 function startScroll() {
     $('#app').animate({
         scrollTop: app.scrollHeight
-    }, calcMilliseconds(), 'linear');
+    }, wpmToMilliseconds(), 'linear');
 }
 
 document.addEventListener('keydown', e => {
