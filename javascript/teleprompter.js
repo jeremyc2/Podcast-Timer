@@ -50,7 +50,7 @@ function wpmToMilliseconds() {
         words = text.length / 5;
 
     const milliseconds = 60000 * words / wordsPerMinute;
-    console.log(`Estimated Duration: ${
+    console.log(`Duration: ${
             Math.floor(milliseconds / 60000)
         }:${
             Math.floor((milliseconds % 60000) / 1000)
