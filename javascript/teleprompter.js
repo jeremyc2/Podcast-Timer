@@ -34,16 +34,23 @@ function startScroll() {
     }, calcMilliseconds(), 'linear');
 }
 
-document.addEventListener("keydown", e => {
+document.addEventListener('keydown', e => {
     if(e.code == 'Space') {
         if(isScrolling) {
+            app.classList.remove('scrolling');
             stopScroll();
             isScrolling = false;
         } else {
+            app.classList.add('scrolling');
             startScroll();
             isScrolling = true;
         }
         e.preventDefault();
-        e.stopPropagation();
     }
 });
+
+app.addEventListener('mousewheel', e => {
+    if(isScrolling) {
+        e.preventDefault();
+    }
+})
