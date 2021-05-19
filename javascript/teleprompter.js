@@ -29,7 +29,7 @@ function getCharacterDimensions() {
     return {height, width};
 }
 
-// Seconds per line to milliseconds for scrolling
+// Seconds per line to milliseconds for scroll time
 function splToMilliseconds() {
 
     if(app.clientHeight == app.scrollHeight) return 0;
@@ -41,7 +41,7 @@ function splToMilliseconds() {
     return milliseconds;
 }
 
-// Words per minute to milliseconds for scrolling
+// Words per minute to milliseconds for scroll time
 function wpmToMilliseconds() {
 
     if(app.clientHeight == app.scrollHeight) return 0;
