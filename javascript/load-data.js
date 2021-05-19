@@ -1,3 +1,5 @@
+// TODO Refactor to use fetch, and maybe get rid of this file completely
+
 const id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
         datasource = document.querySelector("#datasource");
 

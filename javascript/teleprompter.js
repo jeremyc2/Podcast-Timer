@@ -1,4 +1,5 @@
-const secondsPerLine = .1;
+const secondsPerLine = .1,
+    container = document.querySelector('#app code pre');
 
 var isScrolling = false;
 
@@ -53,4 +54,10 @@ app.addEventListener('mousewheel', e => {
     if(isScrolling) {
         e.preventDefault();
     }
-})
+});
+
+const file = new URLSearchParams(document.location.search).get("file") ?? 'test.txt';
+
+fetch(`data/teleprompter/${file}`).then(res => res.text()).then(res => {
+    container.innerText = res;
+});
