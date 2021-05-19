@@ -1,5 +1,3 @@
-// TODO Words per minute
-
 // 150-160 words per minute (WPM) is also recommended for podcasts, radio hosts,
 // and even YouTubers. This should be average for an entire show, while some of
 // the passages should use a faster speaking rate while others slower.
@@ -37,7 +35,9 @@ function calcMilliseconds() {
 
     const { height, width } = getCharacterDimensions();
 
+    // TODO Calc milliseconds from words per minute not seconds per line
     const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / height;
+    
     return milliseconds;
 }
 
