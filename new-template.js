@@ -7,20 +7,20 @@ const rl = readline.createInterface({
 });
 
 const template = 
-`const data = deepFreeze([
+`[
     {
-        time: "00:00",
-        content: {
-            label: "Placeholder",
-            notes: null
+        "time": "00:00",
+        "content": {
+            "label": "Placeholder",
+            "notes": null
         }
     }
-]);`;
+]`;
 
 rl.question("New podcast template? (yes) ", res => {
     if(res == "" || res.trim().toLowerCase() == "yes") {
         var entries = fs.readdirSync("data/main/").map(file => {
-            const match = file.match(/^(\d*)\.js$/);
+            const match = file.match(/^(\d*)\.json$/);
 
             if(match == null) throw "Invalid filename";
 
@@ -36,10 +36,10 @@ rl.question("New podcast template? (yes) ", res => {
             nextFile = Math.max(...entries) + 1;
         }
 
-        fs.writeFileSync(`data/main/${nextFile}.js`, template);
-        fs.writeFileSync('javascript/default-id.js', `const defaultId = ${nextFile};`);
+        fs.writeFileSync(`data/main/${nextFile}.json`, template);
+        fs.writeFileSync('javascript/default-id.json', `const defaultId = ${nextFile};`);
 
-        console.log(`data/main/${nextFile}.js has been added`);
+        console.log(`data/main/${nextFile}.json has been added`);
 
     }
     rl.close();
