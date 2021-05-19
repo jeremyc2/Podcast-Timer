@@ -41,7 +41,7 @@ function splToMilliseconds() {
     return milliseconds;
 }
 
-// Seconds per line to milliseconds for scrolling
+// Words per minute to milliseconds for scrolling
 function wpmToMilliseconds() {
 
     if(app.clientHeight == app.scrollHeight) return 0;
