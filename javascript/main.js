@@ -31,7 +31,7 @@ function appendTimelessRow(row, timerLabel, countdown, content) {
     row.style.setProperty('--timer-width', `${countdown.getBoundingClientRect().width}px`);
 }
 
-function build() {
+function build(data) {
     data.forEach(timer => {
         const row = document.createElement('div'),
                 timerLabel = document.createElement('div'),
@@ -174,9 +174,15 @@ function allowDigitOnly(e) {
         e.preventDefault();
 }
 
-const channel = new BroadcastChannel('app-data');
+const channel = new BroadcastChannel('app-data'),
+    id = new URLSearchParams(document.location.search).get("id") ?? defaultId;
 
-document.addEventListener('data-loaded', build);
+var data;
+
+fetch(`data/main/${id}.json`).then(res => res.text()).then(res => {
+    data = deepFreeze(JSON.parse(res));
+    build(data);
+});
 
 document.querySelectorAll('.pie').forEach(setupPieTimer);
 
