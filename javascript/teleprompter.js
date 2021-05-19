@@ -1,4 +1,6 @@
-const secondsPerLine = 10;
+const secondsPerLine = .1;
+
+var isScrolling = false;
 
 function getLineHeight() {
     const referenceElement = document.querySelector('#app code pre');
@@ -31,3 +33,17 @@ function startScroll() {
         scrollTop: app.scrollHeight
     }, calcMilliseconds(), 'linear');
 }
+
+document.addEventListener("keydown", e => {
+    if(e.code == 'Space') {
+        if(isScrolling) {
+            stopScroll();
+            isScrolling = false;
+        } else {
+            startScroll();
+            isScrolling = true;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
