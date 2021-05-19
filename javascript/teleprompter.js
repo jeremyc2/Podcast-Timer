@@ -42,6 +42,9 @@ function splToMilliseconds() {
 
 // Seconds per line to milliseconds for scrolling
 function wpmToMilliseconds() {
+
+    if(app.clientHeight == app.scrollHeight) return 0;
+
     const text = container.innerText,
         length = text.length;
 
