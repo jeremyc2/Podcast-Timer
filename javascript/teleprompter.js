@@ -8,6 +8,7 @@
 // including spaces and punctuation.
 // Source: Wikipedia
 const secondsPerLine = 10,
+    wordsPerMinute = 150,
     container = document.querySelector('#app code pre');
 
 var isScrolling = false;
@@ -49,7 +50,7 @@ function wpmToMilliseconds() {
         length = text.length;
 
     // TODO calculate Milliseconds
-    // app.scrollHeight * ;
+    // app.scrollHeight * wordsPerMinute;
 }
 
 function stopScroll() {
