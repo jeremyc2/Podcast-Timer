@@ -2,10 +2,11 @@
     font-family: Consolas, 'Courier New', monospace;
     font-size: 2rem;
     overflow: scroll;
-    height: 100vh;
+    max-height: 100vh;
 }
 
 #app pre {
     white-space: pre-wrap;
+    margin: 0;
 }
 

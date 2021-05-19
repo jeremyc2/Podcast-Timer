@@ -1,4 +1,4 @@
-const linesPerSecond = 10;
+const linesPerSecond = 2;
 
 function getLineHeight() {
     const referenceElement = document.querySelector('#app code pre');
@@ -11,11 +11,14 @@ function getLineHeight() {
     height = temp.clientHeight;
     referenceElement.removeChild(temp);
 
-    console.log(height);
-
     return height;
+}
+
+function calcMilliseconds() {
+    const milliseconds = app.scrollHeight / ((linesPerSecond / 1000) * getLineHeight());
+    return milliseconds;
 }
 
 $('#app').animate({
     scrollTop: app.scrollHeight
-}, getLineHeight());
+}, calcMilliseconds());
