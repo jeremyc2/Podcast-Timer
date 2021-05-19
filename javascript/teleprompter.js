@@ -14,25 +14,30 @@ const secondsPerLine = .1,
 
 var isScrolling = false;
 
-function getLineHeight() {
-    const referenceElement = document.querySelector('#app code pre');
+function getCharacterDimensions() {
+    const referenceElement = document.querySelector('#app code pre'),
+        temp = document.createElement('span');
 
-    var temp = document.createElement('div'), height;
     temp.style.opacity = '0';
     temp.innerHTML = 'A';
 
     referenceElement.appendChild(temp);
-    height = temp.clientHeight;
+
+    const height = temp.getBoundingClientRect().height,
+        width = temp.getBoundingClientRect().width;
+
     referenceElement.removeChild(temp);
 
-    return height;
+    return {height, width};
 }
 
 function calcMilliseconds() {
 
     if(app.clientHeight == app.scrollHeight) return 0;
 
-    const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / getLineHeight();
+    const { height, width } = getCharacterDimensions();
+
+    const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / height;
     return milliseconds;
 }
 
