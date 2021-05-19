@@ -1,3 +1,3 @@
 $('#app').animate({
-    scrollTop: $('#app').scrollHeight
+    scrollTop: app.scrollHeight
 }, 800);
