@@ -2,6 +2,7 @@
     font-family: Consolas, 'Courier New', monospace;
     font-size: 2rem;
     overflow: scroll;
+    height: 100vh;
 }
 
 #app pre {
