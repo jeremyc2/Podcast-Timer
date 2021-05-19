@@ -1,0 +1,10 @@
+#app {
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 2rem;
+    overflow: scroll;
+}
+
+#app pre {
+    white-space: pre-wrap;
+}
+
