@@ -13,18 +13,17 @@ const secondsPerLine = 10,
 var isScrolling = false;
 
 function getCharacterDimensions() {
-    const referenceElement = document.querySelector('#app code pre'),
-        temp = document.createElement('span');
+    const temp = document.createElement('span');
 
     temp.style.opacity = '0';
     temp.innerHTML = 'A';
 
-    referenceElement.appendChild(temp);
+    container.appendChild(temp);
 
     const height = temp.getBoundingClientRect().height,
         width = temp.getBoundingClientRect().width;
 
-    referenceElement.removeChild(temp);
+    container.removeChild(temp);
 
     return {height, width};
 }
@@ -43,7 +42,7 @@ function splToMilliseconds() {
 
 // Seconds per line to milliseconds for scrolling
 function wpmToMilliseconds() {
-    const text = document.querySelector('#app code pre').innerText,
+    const text = container.innerText,
         length = text.length;
 
     // TODO calculate Milliseconds
