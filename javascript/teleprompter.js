@@ -64,6 +64,7 @@ function stopScroll() {
 }
 
 function startScroll() {
+    // TODO Scroll a whole page length past the end of everything
     $('#app').animate({
         scrollTop: app.scrollHeight
     }, wpmToMilliseconds(), 'linear');
