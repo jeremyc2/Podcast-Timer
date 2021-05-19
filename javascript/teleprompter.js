@@ -1,4 +1,4 @@
-const linesPerSecond = 2;
+const secondsPerLine = 10;
 
 function getLineHeight() {
     const referenceElement = document.querySelector('#app code pre');
@@ -15,7 +15,7 @@ function getLineHeight() {
 }
 
 function calcMilliseconds() {
-    const milliseconds = app.scrollHeight / ((linesPerSecond / 1000) * getLineHeight());
+    const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / getLineHeight();
     return milliseconds;
 }
 

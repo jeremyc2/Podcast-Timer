@@ -1,8 +1,15 @@
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
 #app {
     font-family: Consolas, 'Courier New', monospace;
     font-size: 2rem;
-    overflow: scroll;
-    max-height: 100vh;
+    height: -webkit-fill-available;
+    overflow-y: auto;
 }
 
 #app pre {
