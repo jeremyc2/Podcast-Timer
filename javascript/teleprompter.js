@@ -19,6 +19,12 @@ function calcMilliseconds() {
     return milliseconds;
 }
 
-$('#app').animate({
-    scrollTop: app.scrollHeight
-}, calcMilliseconds());
+function stopScroll() {
+    $('#app').stop();
+}
+
+function startScroll() {
+    $('#app').animate({
+        scrollTop: app.scrollHeight
+    }, calcMilliseconds(), 'linear');
+}
