@@ -15,6 +15,9 @@ function getLineHeight() {
 }
 
 function calcMilliseconds() {
+
+    if(app.clientHeight == app.scrollHeight) return 0;
+
     const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / getLineHeight();
     return milliseconds;
 }
