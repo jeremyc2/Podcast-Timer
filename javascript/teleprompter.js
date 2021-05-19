@@ -47,10 +47,14 @@ function wpmToMilliseconds() {
     if(app.clientHeight == app.scrollHeight) return 0;
 
     const text = container.innerText,
-        length = text.length;
+        words = text.length / 5;
 
     // TODO calculate Milliseconds
-    // app.scrollHeight * wordsPerMinute;
+    const milliseconds = 60000 * words / (app.scrollHeight * wordsPerMinute);
+    console.log(milliseconds, words)
+    // Reduced: minutes per pixels
+    // minutes * 60000 (milliseconds) per pixel
+    return milliseconds;
 }
 
 function stopScroll() {
