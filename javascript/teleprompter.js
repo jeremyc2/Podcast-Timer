@@ -7,7 +7,7 @@
 // to be 5 characters or keystrokes long in English,
 // including spaces and punctuation.
 // Source: Wikipedia
-const secondsPerLine = .1,
+const secondsPerLine = 10,
     container = document.querySelector('#app code pre');
 
 var isScrolling = false;
