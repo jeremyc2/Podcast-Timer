@@ -2,7 +2,8 @@
     {
         "time": "00:10",
         "content": {
-            "label": "Introduction"
+            "label": "Introduction",
+            "notes": "2-0.txt"
         }
     },
     {

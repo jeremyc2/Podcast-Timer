@@ -7,16 +7,29 @@
     <title>Podcast Timers | Notes</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/png">
     <script>
+        function parse(content) {
+            
+            if(content.trim().startsWith('(((TELEPROMPTER)))')) {
+                const file = content.trim().substring(18, content.trim().length);
+                return `<iframe src="teleprompter.html?${file}"></iframe>`;
+            }
+
+            const temp = document.createElement('div');
+            temp.innerText = content;
+
+            return temp.innerHTML;
+        }
+
         const channel = new BroadcastChannel('app-data');
         channel.addEventListener ('message', (event) => {
 
             if(typeof event.data !== 'string' || event.data == '') {
-                document.querySelector('#app code pre').innerText = '';
+                document.querySelector('#app code pre').innerHTML = '';
                 return;
             };
 
             fetch(`data/details/${event.data}`).then(res => res.text()).then(res => {
-                document.querySelector('#app code pre').innerText = res;
+                document.querySelector('#app code pre').innerHTML = parse(res);
             });
 
         });
@@ -28,6 +41,14 @@
         }
         pre {
             white-space: pre-wrap;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
