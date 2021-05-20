@@ -43,6 +43,8 @@ body {
 #app pre {
     white-space: pre-wrap;
     margin: 0;
+    /* This works for now, but if the teleprompter does
+    not take up the whole screen height, then we're in trouble */
     padding-bottom: 100vh;
 }
 
