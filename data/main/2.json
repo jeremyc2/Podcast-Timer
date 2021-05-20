@@ -3,7 +3,8 @@
         "time": "00:10",
         "content": {
             "label": "Introduction",
-            "notes": "2-0.txt"
+            "notes": "2-0.txt",
+            "teleprompter": true
         }
     },
     {
