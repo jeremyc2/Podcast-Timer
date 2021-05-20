@@ -12,7 +12,8 @@ const template =
         "time": "00:00",
         "content": {
             "label": "Placeholder",
-            "notes": null
+            "notes": null,
+            "teleprompter": false
         }
     }
 ]`;
