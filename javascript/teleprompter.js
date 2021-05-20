@@ -94,4 +94,5 @@ const file = new URLSearchParams(document.location.search).get("file") ?? 'test.
 
 fetch(`data/notes/${file}`).then(res => res.text()).then(res => {
     container.innerText = res;
+    startScroll();
 });
