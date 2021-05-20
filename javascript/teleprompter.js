@@ -60,10 +60,14 @@ function wpmToMilliseconds() {
 }
 
 function stopScroll() {
+    app.classList.remove('scrolling');
+    isScrolling = false;
     $('#app').stop();
 }
 
 function startScroll() {
+    app.classList.add('scrolling');
+    isScrolling = true;
     $('#app').animate({
         scrollTop: app.scrollHeight
     }, wpmToMilliseconds(), 'linear');
@@ -72,13 +76,9 @@ function startScroll() {
 document.addEventListener('keydown', e => {
     if(e.code == 'Space') {
         if(isScrolling) {
-            app.classList.remove('scrolling');
             stopScroll();
-            isScrolling = false;
         } else {
-            app.classList.add('scrolling');
             startScroll();
-            isScrolling = true;
         }
         e.preventDefault();
     }
@@ -96,3 +96,5 @@ fetch(`data/notes/${file}`).then(res => res.text()).then(res => {
     container.innerText = res;
     startScroll();
 });
+
+document.querySelector('footer').innerText = `WPM (Words Per Minute): ${wordsPerMinute}`;

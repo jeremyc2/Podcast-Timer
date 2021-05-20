@@ -1,11 +1,11 @@
 body {
     box-sizing: border-box;
-    height: 100vh;
+    height: calc(100vh - 20px);
     margin: 0;
+    font-family: Consolas, 'Courier New', monospace;
 }
 
 #app {
-    font-family: Consolas, 'Courier New', monospace;
     font-size: 2rem;
     height: -webkit-fill-available;
     overflow-y: auto;
@@ -48,3 +48,11 @@ body {
     padding-bottom: 100vh;
 }
 
+footer {
+    height: 19px;
+    text-align: center;
+    font-size: 15px;
+    background: black;
+    color: white;
+    border-top: 1px solid white;
+}
