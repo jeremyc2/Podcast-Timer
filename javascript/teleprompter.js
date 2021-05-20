@@ -92,6 +92,6 @@ app.addEventListener('mousewheel', e => {
 
 const file = new URLSearchParams(document.location.search).get("file") ?? 'test.txt';
 
-fetch(`data/teleprompter/${file}`).then(res => res.text()).then(res => {
+fetch(`data/notes/${file}`).then(res => res.text()).then(res => {
     container.innerText = res;
 });

@@ -7,29 +7,23 @@
     <title>Podcast Timers | Notes</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/png">
     <script>
-        function parse(content) {
-            
-            if(content.trim().startsWith('(((TELEPROMPTER)))')) {
-                const file = content.trim().substring(18, content.trim().length);
-                return `<iframe src="teleprompter.html?${file}"></iframe>`;
-            }
-
-            const temp = document.createElement('div');
-            temp.innerText = content;
-
-            return temp.innerHTML;
-        }
 
         const channel = new BroadcastChannel('app-data');
         channel.addEventListener ('message', (event) => {
 
-            if(typeof event.data !== 'string' || event.data == '') {
-                document.querySelector('#app code pre').innerHTML = '';
+            if(typeof event.data.file !== 'string' || event.data.file == '') {
+                document.querySelector('#app code pre').innerText = '';
                 return;
             };
 
-            fetch(`data/details/${event.data}`).then(res => res.text()).then(res => {
-                document.querySelector('#app code pre').innerHTML = parse(res);
+            if(event.data.teleprompter) {
+                document.querySelector('#app code pre').innerHTML = 
+                    `<iframe src="teleprompter.html?file=${event.data.file}"></iframe>`;
+                return;
+            }
+
+            fetch(`data/notes/${event.data.file}`).then(res => res.text()).then(res => {
+                document.querySelector('#app code pre').innerText = res;
             });
 
         });

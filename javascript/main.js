@@ -17,7 +17,7 @@ function appendTimelessRow(row, timerLabel, countdown, content) {
             timerLabel.style.backgroundColor = '';
             timerLabel.style.color = '';
         } else {
-            channel.postMessage(content.notes);
+            channel.postMessage({file: content.notes, teleprompter: !!content.teleprompter});
             this.classList.add('end-countdown');
             timerLabel.style.backgroundColor = 'unset';
             timerLabel.style.color = 'black';
@@ -90,7 +90,7 @@ function build(data) {
             }
 
             row.classList.add('start-countdown');
-            channel.postMessage(timer.content.notes);
+            channel.postMessage({file: timer.content.notes, teleprompter: !!timer.content.teleprompter});
 
             interval = setInterval(() => {
                 currTime = decrementTime(currTime);
