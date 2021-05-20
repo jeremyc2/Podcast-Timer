@@ -97,4 +97,4 @@ fetch(`data/notes/${file}`).then(res => res.text()).then(res => {
     startScroll();
 });
 
-document.querySelector('footer').innerText = `WPM (Words Per Minute): ${wordsPerMinute}`;
+document.querySelector('footer').innerText = `${wordsPerMinute} WPM (Recommended)`;
