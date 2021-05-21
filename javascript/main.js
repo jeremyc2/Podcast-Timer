@@ -43,6 +43,10 @@ function build(data) {
         progress.classList.add('progress');
         countdown.classList.add('countdown');
 
+        if(timer.user) {
+            timerLabel.classList.add(`user${timer.user}`);
+        }
+
         var interval;
 
         const seconds = toSeconds(timer.time);

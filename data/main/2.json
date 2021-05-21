@@ -1,5 +1,6 @@
 [
     {
+        "user": 1,
         "time": "00:10",
         "content": {
             "label": "Introduction",
@@ -8,12 +9,14 @@
         }
     },
     {
+        "user": 2,
         "time": "03:00",
         "content": {
             "label": "Last week catchup"
         }
     },
     {
+        "user": 1,
         "time": "00:20",
         "content": {
             "label": "I've grown quite attached to Visual Studio Code, also known as VS Code",
@@ -21,60 +24,70 @@
         }
     },
     {
+        "user": 1,
         "time": "00:05",
         "content": {
             "label": "[To Justin] Do you feel the same way?"
         }
     },
     {
+        "user": 2,
         "time": "00:10",
         "content": {
             "label": "[Justin's Response]"
         }
     },
     {
+        "user": 2,
         "time": "00:10",
         "content": {
             "label": "[To Justin] Do you think you could use VS Code for all your programming?"
         }
     },
     {
+        "user": 1,
         "time": "00:10",
         "content": {
             "label": "[Justin's Response]"
         }
     },
     {
+        "user": 2,
         "time": "00:15",
         "content": {
             "label": "[To Justin] Now, do you even think it's ideal to have one IDE to rule them all? Explain."
         }
     },
     {
+        "user": 1,
         "time": "02:00",
         "content": {
             "label": "[Justin's Response]"
         }
     },
     {
+        "user": 1,
         "time": "00:30",
         "content": {
             "label": "Lamenting a little the lack of ABAP support in VS Code"
         }
     },
     {
+        "user": 2,
         "time": "00:15",
         "content": {
             "label": "[Funzie] Any cool VS Code extensions you discovered recently?"
         }
     },
     {
+        "user": 1,
         "time": "01:00",
         "content": {
             "label": "[Justin's Response]"
         }
     },
     {
+        "user": 2,
         "time": "01:30",
         "content": {
             "label": "Here are some I found...",

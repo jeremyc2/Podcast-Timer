@@ -80,6 +80,25 @@ header > h2 {
     padding-left: 50px;
 }
 
+div:not(.start-countdown) > .timer-label::before {
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+}
+
+div:not(.start-countdown) > .timer-label.user1::before {
+    background-image: url(../img/profile1.svg);
+}
+
+div:not(.start-countdown) > .timer-label.user2::before {
+    background-image: url(../img/profile2.svg);
+}
+
 .progress, .progress > div {
     position: absolute;
     top: 0;

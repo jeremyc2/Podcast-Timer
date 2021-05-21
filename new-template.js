@@ -9,6 +9,7 @@ const rl = readline.createInterface({
 const template = 
 `[
     {
+        "user": 1,
         "time": "00:00",
         "content": {
             "label": "Placeholder",
