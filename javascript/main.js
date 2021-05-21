@@ -47,7 +47,7 @@ function build(data) {
             timerLabel.classList.add(`user${timer.user}`);
         }
 
-        if(timer.teleprompter) {
+        if(timer.content.teleprompter) {
             timerLabel.classList.add('teleprompter');
         }
 

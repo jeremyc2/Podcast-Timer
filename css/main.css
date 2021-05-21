@@ -100,7 +100,7 @@ div:not(.start-countdown) > .timer-label.user2::before {
     background-image: url(../img/profile2.svg);
 }
 
-.teleprompter:not(.start-countdown) > .timer-label::after {
+div:not(.start-countdown) > .timer-label.teleprompter::after {
     content: '';
     background-image: url(../img/monitor_black_24dp.svg);
     background-repeat: no-repeat;
