@@ -11,6 +11,8 @@ const secondsPerLine = 10,
     wordsPerMinute = 150,
     container = document.querySelector('#app code pre');
 
+const spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+
 var isScrolling = false;
 
 function getCharacterDimensions() {
@@ -49,14 +51,7 @@ function wpmToMilliseconds() {
     const text = container.innerText,
         words = text.length / 5;
 
-    const milliseconds = 60000 * words / wordsPerMinute;
-    console.log(`Duration: ${
-            Math.floor(milliseconds / 60000)
-        }:${
-            Math.floor((milliseconds % 60000) / 1000)
-        }`);
-    
-    return milliseconds;
+    return 60000 * words / wordsPerMinute;
 }
 
 function stopScroll() {
@@ -68,9 +63,18 @@ function stopScroll() {
 function startScroll() {
     app.classList.add('scrolling');
     isScrolling = true;
+
+    const milliseconds = wpmToMilliseconds();
     $('#app').animate({
         scrollTop: app.scrollHeight
-    }, wpmToMilliseconds(), 'linear');
+    }, milliseconds, 'linear');
+
+    document.querySelector('footer').innerHTML = 
+        `${wordsPerMinute} WPM (Recommended)${spacer}Total Duration &#8212; ${
+            Math.floor(milliseconds / 60000)
+        }:${
+            Math.floor((milliseconds % 60000) / 1000)
+        }`;
 }
 
 document.addEventListener('keydown', e => {
@@ -96,5 +100,3 @@ fetch(`data/notes/${file}`).then(res => res.text()).then(res => {
     container.innerText = res;
     startScroll();
 });
-
-document.querySelector('footer').innerText = `${wordsPerMinute} WPM (Recommended)`;
