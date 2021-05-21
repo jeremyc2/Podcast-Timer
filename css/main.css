@@ -78,6 +78,7 @@ header > h2 {
     background-color: var(--color);
     color: white;
     padding-left: 50px;
+    padding-right: 50px;
 }
 
 div:not(.start-countdown) > .timer-label::before {
@@ -99,12 +100,25 @@ div:not(.start-countdown) > .timer-label.user2::before {
     background-image: url(../img/profile2.svg);
 }
 
+div:not(.start-countdown) > .timer-label::after {
+    content: '';
+    background-image: url(../img/monitor_black_24dp.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
 .progress, .progress > div {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     padding-left: 50px;
+    padding-right: 50px;
 }
 
 .progress {
