@@ -47,6 +47,10 @@ function build(data) {
             timerLabel.classList.add(`user${timer.user}`);
         }
 
+        if(timer.teleprompter) {
+            timerLabel.classList.add('teleprompter');
+        }
+
         var interval;
 
         const seconds = toSeconds(timer.time);
