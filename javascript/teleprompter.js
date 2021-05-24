@@ -12,7 +12,8 @@ const container = document.querySelector('#app code pre'),
 
 var secondsPerLine = 10,
     wordsPerMinute = 150,
-    isScrolling = false;
+    isScrolling = false,
+    milliseconds;
 
 function getCharacterDimensions() {
     const temp = document.createElement('span');
@@ -30,6 +31,13 @@ function getCharacterDimensions() {
     return {height, width};
 }
 
+function updateFooter() {
+    document.querySelector('footer').innerHTML = 
+        `${wordsPerMinute} WPM (Recommended)${spacer}Total Duration &#8212; ` +
+            `${Math.floor(milliseconds / 60000)}`.padStart(2,'0') + ':' + 
+            `${Math.floor((milliseconds % 60000) / 1000)}`.padStart(2,'0');
+}
+
 // Seconds per line to milliseconds for scroll time
 function splToMilliseconds(spl) {
 
@@ -37,7 +45,7 @@ function splToMilliseconds(spl) {
 
     const { height } = getCharacterDimensions();
 
-    const milliseconds = (app.scrollHeight * spl * 1000) / height;
+    milliseconds = (app.scrollHeight * spl * 1000) / height;
     
     return milliseconds;
 }
@@ -63,15 +71,12 @@ function startScroll() {
     app.classList.add('scrolling');
     isScrolling = true;
 
-    const milliseconds = wpmToMilliseconds(wordsPerMinute);
+    milliseconds = wpmToMilliseconds(wordsPerMinute);
     $('#app').animate({
         scrollTop: app.scrollHeight
     }, milliseconds, 'linear');
 
-    document.querySelector('footer').innerHTML = 
-        `${wordsPerMinute} WPM (Recommended)${spacer}Total Duration &#8212; ` +
-            `${Math.floor(milliseconds / 60000)}`.padStart(2,'0') + ':' + 
-            `${Math.floor((milliseconds % 60000) / 1000)}`.padStart(2,'0');
+    updateFooter();
 }
 
 // FIXME Acceleration on ArrowUp and ArrowDown to change scroll speed should be constant
@@ -91,6 +96,8 @@ document.addEventListener('keydown', e => {
 
         if(wordsPerMinute <= 0) {
             wordsPerMinute = 0;
+            stopScroll();
+            updateFooter();
             return;
         };
 
