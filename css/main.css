@@ -2,10 +2,10 @@
     --monospace-font: Consolas, 'Courier New', monospace;
 
     /* Saturated*/
-    /* --color1: hsl(116, 29%, 50%);
+    --color1: hsl(116, 29%, 50%);
     --color2: hsl(183, 99%, 37%);
     --color3: hsl(28, 96%, 56%);
-    --color4: hsl(359, 94%, 65%); */
+    --color4: hsl(359, 94%, 65%);
 
     /* Earthy and fresh */
     /* --color1: #945D60;
@@ -20,10 +20,10 @@
     --color4: #192231; */
 
     /* Tropical tones */
-    --color1: #1FB58F;
+    /* --color1: #1FB58F;
     --color2: #EAB126;
     --color3: #F24C4E;
-    --color4: #1B7B34;
+    --color4: #1B7B34; */
 
 }
 
