@@ -76,11 +76,6 @@ function startScroll() {
 
 document.addEventListener('keydown', e => {
     if(e.code == 'Space') {
-        if(isScrolling) {
-            stopScroll();
-        } else {
-            startScroll();
-        }
         e.preventDefault();
     } else if(e.code == 'ArrowUp' && isScrolling) {
 
@@ -101,6 +96,16 @@ document.addEventListener('keydown', e => {
         stopScroll();
         wordsPerMinute--;
         startScroll();
+    }
+})
+
+document.addEventListener('keyup', e => {
+    if(e.code == 'Space') {
+        if(isScrolling) {
+            stopScroll();
+        } else {
+            startScroll();
+        }
     }
 });
 
