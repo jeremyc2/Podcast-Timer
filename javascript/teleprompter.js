@@ -31,26 +31,26 @@ function getCharacterDimensions() {
 }
 
 // Seconds per line to milliseconds for scroll time
-function splToMilliseconds() {
+function splToMilliseconds(spl) {
 
     if(app.clientHeight == app.scrollHeight) return 0;
 
     const { height } = getCharacterDimensions();
 
-    const milliseconds = (app.scrollHeight * secondsPerLine * 1000) / height;
+    const milliseconds = (app.scrollHeight * spl * 1000) / height;
     
     return milliseconds;
 }
 
 // Words per minute to milliseconds for scroll time
-function wpmToMilliseconds() {
+function wpmToMilliseconds(wpm) {
 
     if(app.clientHeight == app.scrollHeight) return 0;
 
     const text = container.innerText,
         words = text.length / 5;
 
-    return 60000 * words / wordsPerMinute;
+    return 60000 * words / wpm;
 }
 
 function stopScroll() {
@@ -63,7 +63,7 @@ function startScroll() {
     app.classList.add('scrolling');
     isScrolling = true;
 
-    const milliseconds = wpmToMilliseconds();
+    const milliseconds = wpmToMilliseconds(wordsPerMinute);
     $('#app').animate({
         scrollTop: app.scrollHeight
     }, milliseconds, 'linear');
