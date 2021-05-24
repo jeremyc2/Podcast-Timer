@@ -97,7 +97,7 @@ document.addEventListener('keydown', e => {
         wordsPerMinute--;
         startScroll();
     }
-})
+});
 
 document.addEventListener('keyup', e => {
     if(e.code == 'Space') {
