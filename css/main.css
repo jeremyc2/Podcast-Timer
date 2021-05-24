@@ -2,28 +2,28 @@
     --monospace-font: Consolas, 'Courier New', monospace;
 
     /* Saturated*/
-    --color1: hsl(116, 29%, 50%);
-    --color2: hsl(183, 99%, 37%);
-    --color3: hsl(28, 96%, 56%);
-    --color4: hsl(359, 94%, 65%);
+    --colorA1: hsl(116, 29%, 50%);
+    --colorA2: hsl(183, 99%, 37%);
+    --colorA3: hsl(28, 96%, 56%);
+    --colorA4: hsl(359, 94%, 65%);
 
     /* Earthy and fresh */
-    /* --color1: #945D60;
-    --color2: #626E60;
-    --color3: #AF473C;
-    --color4: #3C3C3C; */
+    --colorB1: hsl(357, 23%, 47%);
+    --colorB2: hsl(111, 7%, 40%);
+    --colorB3: hsl(6, 49%, 46%);
+    --colorB4: hsl(0, 0%, 24%);
 
     /* Stormy hues */
-    /* --color1: #494E68;
-    --color2: #98878F;
-    --color3: #985E6D;
-    --color4: #192231; */
+    --colorC1: hsl(230, 18%, 35%);
+    --colorC2: hsl(332, 8%, 56%);
+    --colorC3: hsl(344, 24%, 48%);
+    --colorC4: hsl(218, 32%, 15%);
 
     /* Tropical tones */
-    /* --color1: #1FB58F;
-    --color2: #EAB126;
-    --color3: #F24C4E;
-    --color4: #1B7B34; */
+    --colorD1: hsl(165, 71%, 42%);
+    --colorD2: hsl(43, 82%, 53%);
+    --colorD3: hsl(359, 86%, 62%);
+    --colorD4: hsl(136, 64%, 29%);
 
 }
 

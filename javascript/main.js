@@ -1,3 +1,20 @@
+function setTheme(themeName) {
+    if(themes.indexOf(themeName) !== -1) {
+        document.body.style.setProperty('--color1', `var(--color${themeName}1)`);
+        document.body.style.setProperty('--color2', `var(--color${themeName}2)`);
+        document.body.style.setProperty('--color3', `var(--color${themeName}3)`);
+        document.body.style.setProperty('--color4', `var(--color${themeName}4)`);
+    }
+}
+
+function rotateTheme() {
+    setTheme(themes[currentThemeIndex++]);
+    
+    if(currentThemeIndex >= themes.length) {
+        currentThemeIndex = 0;
+    }
+}
+
 function logWidths() {
     document.querySelectorAll('.timer-label').forEach(el => {
         const a = el.getBoundingClientRect().width,
@@ -183,9 +200,13 @@ function allowDigitOnly(e) {
 }
 
 const channel = new BroadcastChannel('app-data'),
-    id = new URLSearchParams(document.location.search).get("id") ?? defaultId;
+    id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
+    themes = ['A','B','C','D'];
 
-var data;
+var data,
+    currentThemeIndex = 0;
+
+rotateTheme();
 
 fetch(`data/main/${id}.json`).then(res => res.text()).then(res => {
     data = deepFreeze(JSON.parse(res));
