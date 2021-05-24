@@ -1,9 +1,30 @@
 :root {
-    --color1: hsl(116, 29%, 50%);
+    --monospace-font: Consolas, 'Courier New', monospace;
+
+    /* Saturated*/
+    /* --color1: hsl(116, 29%, 50%);
     --color2: hsl(183, 99%, 37%);
     --color3: hsl(28, 96%, 56%);
-    --color4: hsl(359, 94%, 65%);
-    --monospace-font: Consolas, 'Courier New', monospace;
+    --color4: hsl(359, 94%, 65%); */
+
+    /* Earthy and fresh */
+    /* --color1: #945D60;
+    --color2: #626E60;
+    --color3: #AF473C;
+    --color4: #3C3C3C; */
+
+    /* Stormy hues */
+    /* --color1: #494E68;
+    --color2: #98878F;
+    --color3: #985E6D;
+    --color4: #192231; */
+
+    /* Tropical tones */
+    --color1: #1FB58F;
+    --color2: #EAB126;
+    --color3: #F24C4E;
+    --color4: #1B7B34;
+
 }
 
 *, *::after, *::before {
@@ -87,6 +108,11 @@ header > h2 {
     color: white;
     padding-left: 50px;
     padding-right: 50px;
+    border-bottom: 1px solid white;
+}
+
+.row:last-of-type .timer-label {
+    border-bottom: 0;
 }
 
 div:not(.start-countdown):not(.end-countdown) > .timer-label::before {
@@ -131,9 +157,15 @@ div:not(.start-countdown):not(.end-countdown) > .timer-label.teleprompter::after
 
 .progress {
     background-color: white;
+    border-bottom: 1px solid white;
+    box-sizing: content-box;
     overflow: hidden;
     width: 0;
     padding: 0;
+}
+
+.row:last-of-type .progress {
+    border-bottom: none;
 }
 
 .start-countdown .progress {
