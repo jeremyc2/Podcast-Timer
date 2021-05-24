@@ -7,13 +7,12 @@
 // to be 5 characters or keystrokes long in English,
 // including spaces and punctuation.
 // Source: Wikipedia
-const secondsPerLine = 10,
+const container = document.querySelector('#app code pre'),
+    spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+
+var secondsPerLine = 10,
     wordsPerMinute = 150,
-    container = document.querySelector('#app code pre');
-
-const spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-
-var isScrolling = false;
+    isScrolling = false;
 
 function getCharacterDimensions() {
     const temp = document.createElement('span');
@@ -70,11 +69,9 @@ function startScroll() {
     }, milliseconds, 'linear');
 
     document.querySelector('footer').innerHTML = 
-        `${wordsPerMinute} WPM (Recommended)${spacer}Total Duration &#8212; ${
-            Math.floor(milliseconds / 60000)
-        }:${
-            Math.floor((milliseconds % 60000) / 1000)
-        }`;
+        `${wordsPerMinute} WPM (Recommended)${spacer}Total Duration &#8212; ` +
+            `${Math.floor(milliseconds / 60000)}`.padStart(2,'0') + ':' + 
+            `${Math.floor((milliseconds % 60000) / 1000)}`.padStart(2,'0');
 }
 
 document.addEventListener('keydown', e => {
@@ -85,6 +82,22 @@ document.addEventListener('keydown', e => {
             startScroll();
         }
         e.preventDefault();
+    } else if(e.code == 'ArrowUp' && isScrolling) {
+
+        if(wordsPerMinute < 0) {
+            wordsPerMinute = 0;
+        }
+
+        stopScroll();
+        wordsPerMinute++;
+        startScroll();
+    } else if (e.code == 'ArrowDown' && isScrolling) {
+
+        if(wordsPerMinute <= 0) return;
+
+        stopScroll();
+        wordsPerMinute--;
+        startScroll();
     }
 });
 
