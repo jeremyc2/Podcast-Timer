@@ -1,3 +1,11 @@
+:root {
+    --color1: hsl(116, 29%, 50%);
+    --color2: hsl(183, 99%, 37%);
+    --color3: hsl(28, 96%, 56%);
+    --color4: hsl(359, 94%, 65%);
+    --monospace-font: Consolas, 'Courier New', monospace;
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
     user-select: none;
@@ -19,7 +27,7 @@ header {
     top: 0;
     background: white;
     z-index: 1;
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: var(--monospace-font);
     box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
                 0 2px 2px rgba(0,0,0,0.12), 
                 0 4px 4px rgba(0,0,0,0.12), 
@@ -151,7 +159,7 @@ div:not(.start-countdown):not(.end-countdown) > .timer-label.teleprompter::after
     color: white;
     border-left: 1px solid white;
     border-bottom: 1px solid white;
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: var(--monospace-font);
 }
 
 .end-countdown .countdown {
@@ -163,19 +171,19 @@ div:not(.start-countdown):not(.end-countdown) > .timer-label.teleprompter::after
 }
 
 .row:nth-child(4n+1) {
-    --color: hsl(116, 29%, 50%);
+    --color: var(--color1);
 }
 
 .row:nth-child(4n+2) {
-    --color: hsl(183, 99%, 37%);
+    --color: var(--color2);
 }
 
 .row:nth-child(4n+3) {
-    --color: hsl(28, 96%, 56%);
+    --color: var(--color3);
 }
 
 .row:nth-child(4n+0) {
-    --color: hsl(359, 94%, 65%);
+    --color: var(--color4);
 }
 
 @keyframes timer-row {
