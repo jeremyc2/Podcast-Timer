@@ -64,9 +64,9 @@ header > h2 {
 #notes-icon, #theme-icon {
     position: absolute;
     top: 0;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
-    background: hsl(0, 0%, 82%);
+    background: hsl(0, 0%, 70%);
 }
 
 #notes-icon {
@@ -75,12 +75,12 @@ header > h2 {
 }
 
 #theme-icon {
-    right: 60px;
+    right: 50px;
     border-radius: 0 0 15px 15px;
 }
 
 #notes-icon:hover, #theme-icon:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 #timers {
