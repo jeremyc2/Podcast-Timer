@@ -89,7 +89,6 @@ document.addEventListener('keydown', e => {
             wordsPerMinute = 0;
         }
 
-        stopScroll();
         wordsPerMinute++;
         startScroll();
     } else if (e.code == 'ArrowDown' && isScrolling) {
@@ -101,7 +100,6 @@ document.addEventListener('keydown', e => {
             return;
         };
 
-        stopScroll();
         wordsPerMinute--;
         startScroll();
     }
