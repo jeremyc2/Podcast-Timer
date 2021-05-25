@@ -12,7 +12,7 @@ const container = document.querySelector('#app code pre'),
     recommendedWPM = 150;
 
 var secondsPerLine = 10,
-    wordsPerMinute = 1,
+    wordsPerMinute = 150,
     isScrolling = false,
     milliseconds;
 
