@@ -8,10 +8,11 @@
 // including spaces and punctuation.
 // Source: Wikipedia
 const container = document.querySelector('#app code pre'),
-    spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+    recommendedWPM = 150;
 
 var secondsPerLine = 10,
-    wordsPerMinute = 150,
+    wordsPerMinute = 1,
     isScrolling = false,
     milliseconds;
 
@@ -33,7 +34,9 @@ function getCharacterDimensions() {
 
 function updateFooter() {
     document.querySelector('footer').innerHTML = 
-        `${wordsPerMinute} WPM (Recommended)${spacer}Total Duration &#8212; ` +
+        `${wordsPerMinute} WPM${
+                wordsPerMinute == recommendedWPM? ' (Recommended)': ''
+            }${spacer}Total Duration &#8212; ` +
             `${Math.floor(milliseconds / 60000)}`.padStart(2,'0') + ':' + 
             `${Math.floor((milliseconds % 60000) / 1000)}`.padStart(2,'0');
 }
@@ -89,6 +92,7 @@ document.addEventListener('keydown', e => {
             wordsPerMinute = 0;
         }
 
+        $('#app').stop();
         wordsPerMinute++;
         startScroll();
     } else if (e.code == 'ArrowDown' && isScrolling) {
@@ -100,6 +104,7 @@ document.addEventListener('keydown', e => {
             return;
         };
 
+        $('#app').stop();
         wordsPerMinute--;
         startScroll();
     }
