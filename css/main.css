@@ -145,7 +145,7 @@ div:not(.start-countdown):not(.end-countdown) > .timer-label.user2::before {
 
 div:not(.start-countdown):not(.end-countdown) > .timer-label.teleprompter::after {
     content: '';
-    background-image: url(../img/monitor_black_24dp.svg);
+    background-image: url(../img/monitor_white_24dp.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 40px;
