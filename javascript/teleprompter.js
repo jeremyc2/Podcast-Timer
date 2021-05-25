@@ -82,7 +82,6 @@ function startScroll() {
     updateFooter();
 }
 
-// FIXME Acceleration on ArrowUp and ArrowDown to change scroll speed should be constant
 document.addEventListener('keydown', e => {
     if(e.code == 'Space') {
         e.preventDefault();
