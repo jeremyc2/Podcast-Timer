@@ -66,6 +66,8 @@ function build(data) {
 
         if(timer.content.teleprompter) {
             timerLabel.classList.add('teleprompter');
+        } else if(timer.content.notes) {
+            timerLabel.classList.add('note');
         }
 
         var interval;
