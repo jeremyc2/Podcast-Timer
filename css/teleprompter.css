@@ -1,16 +1,17 @@
 body {
     box-sizing: border-box;
-    height: calc(100vh - 20px);
     margin: 0;
     font-family: Consolas, 'Courier New', monospace;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #app {
     font-size: 2rem;
-    height: -webkit-fill-available;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: black;
     color: white;
     padding: 20px 0 20px 20px;
 }
@@ -44,16 +45,12 @@ body {
     white-space: pre-wrap;
     line-height: 200%;
     margin: 0;
-    /* This works for now, but if the teleprompter does
-    not take up the whole screen height, then we're in trouble */
     padding-bottom: 100vh;
 }
 
 footer {
-    height: 19px;
     text-align: center;
-    font-size: 15px;
-    background: black;
+    font-size: 1.75rem;
     color: #4CAF50;
     border-top: 1px solid white;
 }
