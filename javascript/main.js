@@ -1,9 +1,15 @@
-function setTheme(themeName) {
-    if(themes.indexOf(themeName) !== -1) {
-        document.body.style.setProperty('--color1', `var(--color${themeName}1)`);
-        document.body.style.setProperty('--color2', `var(--color${themeName}2)`);
-        document.body.style.setProperty('--color3', `var(--color${themeName}3)`);
-        document.body.style.setProperty('--color4', `var(--color${themeName}4)`);
+function setTheme(theme) {
+    if(themes.indexOf(theme) !== -1) {
+        document.body.style.setProperty('--color1', `var(--color${theme.id}1)`);
+        document.body.style.setProperty('--color2', `var(--color${theme.id}2)`);
+        document.body.style.setProperty('--color3', `var(--color${theme.id}3)`);
+        document.body.style.setProperty('--color4', `var(--color${theme.id}4)`);
+
+        if(theme.isDark) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
     }
 }
 
@@ -203,7 +209,12 @@ function allowDigitOnly(e) {
 
 const channel = new BroadcastChannel('app-data'),
     id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
-    themes = ['A','B','C','D'];
+    themes = [
+        {id: 'A', isDark: false},
+        {id: 'B', isDark: true},
+        {id: 'C', isDark: true},
+        {id: 'D', isDark: false}
+    ];
 
 var data,
     currentThemeIndex = 0;

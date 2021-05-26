@@ -56,6 +56,10 @@ header {
                 0 16px 16px rgba(0,0,0,0.12);
 }
 
+body.dark > header {
+    background: black;
+}
+
 header > h2 {
     margin-top: 0;
     padding-top: 10px;
