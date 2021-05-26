@@ -13,12 +13,22 @@ function setTheme(theme) {
     }
 }
 
+function initTheme() {
+    currentThemeIndex = localStorage.getItem('theme-number') ?? 0;
+    currentThemeIndex = parseInt(currentThemeIndex);
+    setTheme(themes[currentThemeIndex]);
+}
+
 function rotateTheme() {
-    setTheme(themes[currentThemeIndex++]);
-    
-    if(currentThemeIndex >= themes.length) {
+    if(currentThemeIndex >= themes.length - 1) {
         currentThemeIndex = 0;
+    } else {
+        currentThemeIndex++;
     }
+
+    localStorage.setItem('theme-number', currentThemeIndex);
+
+    setTheme(themes[currentThemeIndex]);
 }
 
 function logWidths() {
@@ -217,9 +227,9 @@ const channel = new BroadcastChannel('app-data'),
     ];
 
 var data,
-    currentThemeIndex = 0;
+    currentThemeIndex;
 
-rotateTheme();
+initTheme();
 
 fetch(`data/main/${id}.json`).then(res => res.text()).then(res => {
     data = deepFreeze(JSON.parse(res));
