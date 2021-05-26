@@ -28,6 +28,12 @@
     cursor: pointer;
 }
 
+@supports not (background-image: paint(checkerboard)) {
+    .pie {
+        background: var(--color);
+    }
+}
+
 body.dark .pie {
     border-color: white;
 }
