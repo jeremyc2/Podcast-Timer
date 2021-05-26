@@ -211,9 +211,9 @@ const channel = new BroadcastChannel('app-data'),
     id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
     themes = [
         {id: 'A', isDark: false},
-        {id: 'B', isDark: true},
+        {id: 'B', isDark: false},
         {id: 'C', isDark: true},
-        {id: 'D', isDark: false}
+        {id: 'D', isDark: true}
     ];
 
 var data,
