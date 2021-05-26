@@ -1,4 +1,3 @@
-
 @property --piePercent {
     syntax: "<percentage>";
     initial-value: 0%;
@@ -28,12 +27,6 @@
     cursor: pointer;
 }
 
-@supports not (background-image: paint(checkerboard)) {
-    .pie {
-        background: var(--color);
-    }
-}
-
 body.dark .pie {
     border-color: white;
 }
@@ -44,6 +37,12 @@ body.dark .pie {
 
 .start-pie {
     animation: timer-circle var(--time) linear 0s 1 forwards;
+}
+
+@supports not (background-image: paint(checkerboard)) {
+    .start-pie {
+        animation: timer-circle var(--time) linear 0s 1 forwards;
+    }
 }
 
 .pie > div {
