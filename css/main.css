@@ -58,6 +58,7 @@ header {
 
 body.dark > header {
     background: black;
+    color: white;
 }
 
 header > h2 {
