@@ -22,7 +22,7 @@
     width: 100px;
     border-radius: 50%;
     border: 2px solid black;
-    background: conic-gradient(white var(--piePercent), var(--color) 0%);
+    background: conic-gradient(transparent var(--piePercent), var(--color) 0%);
     overflow: hidden;
     transition: 0.01s linear;
     cursor: pointer;
