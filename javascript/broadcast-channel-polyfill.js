@@ -8,7 +8,7 @@ if (!window.BroadcastChannel) {
             if (event === 'message') {
                 window.addEventListener('storage', (event) => {
                     if (event.storageArea != localStorage) return;
-                    if (event.key === `BroadcastChannel-${channelName}`) {
+                    if (event.key === `BroadcastChannel-${this.channelName}`) {
                         callback({ data: JSON.parse(event.newValue) });
                     }
                 });
@@ -16,7 +16,7 @@ if (!window.BroadcastChannel) {
         }
 
         postMessage(data) {
-            window.localStorage.setItem(`BroadcastChannel-${channelName}`, JSON.stringify(data));
+            window.localStorage.setItem(`BroadcastChannel-${this.channelName}`, JSON.stringify(data));
         }
     }
 }
