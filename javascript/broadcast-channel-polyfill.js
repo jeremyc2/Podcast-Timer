@@ -1,4 +1,5 @@
-if (!BroadcastChannel) {
+// TODO Make into an object because we are using 'new'
+if (!window.BroadcastChannel) {
     window.BroadcastChannel = (channelName) => {
         var bc = {
             addEventListener: (event, callback) => {

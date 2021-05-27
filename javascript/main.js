@@ -217,7 +217,7 @@ function allowDigitOnly(e) {
         e.preventDefault();
 }
 
-const channel = new BroadcastChannel('app-data'),
+const channel = new window.BroadcastChannel('app-data'),
     id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
     themes = [
         {id: 'A', isDark: false},
