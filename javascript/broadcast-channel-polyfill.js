@@ -1,21 +1,22 @@
-// TODO Make into an object because we are using 'new'
 if (!window.BroadcastChannel) {
-    window.BroadcastChannel = (channelName) => {
-        var bc = {
-            addEventListener: (event, callback) => {
-                if (event === 'message') {
-                    window.addEventListener('storage', (event) => {
-                        if (event.storageArea != localStorage) return;
-                        if (event.key === `BroadcastChannel-${channelName}`) {
-                            callback({ data: JSON.parse(event.newValue) });
-                        }
-                    });
-                }
-            },
-            postMessage: (data) => {
-                window.localStorage.setItem(`BroadcastChannel-${channelName}`, JSON.stringify(data));
+    window.BroadcastChannel = class {
+        constructor(channelName) {
+            this.channelName = channelName;
+        }
+
+        addEventListener(event, callback) {
+            if (event === 'message') {
+                window.addEventListener('storage', (event) => {
+                    if (event.storageArea != localStorage) return;
+                    if (event.key === `BroadcastChannel-${channelName}`) {
+                        callback({ data: JSON.parse(event.newValue) });
+                    }
+                });
             }
-        };
-        return bc;
+        }
+
+        postMessage(data) {
+            window.localStorage.setItem(`BroadcastChannel-${channelName}`, JSON.stringify(data));
+        }
     }
 }
