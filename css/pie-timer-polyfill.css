@@ -1,0 +1,46 @@
+/* TODO Fix time and remove infinite */
+.spinner, .filler {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: white;
+}
+
+body.dark :is(.spinner, .filler) {
+    background: black;
+}
+
+.spinner {
+    transform-origin: 100% 50%;
+    animation: rota 10s linear infinite;
+}
+
+.filler {
+    animation: fill 10s steps(1, end) infinite;
+    left: 50%;
+    opacity: 0;
+}
+
+.mask {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    opacity: 1;
+    background: inherit;
+    animation: mask 10s steps(1, end) infinite;
+}
+
+@keyframes rota {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fill {
+    0%        { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+@keyframes mask {
+    0%        { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
