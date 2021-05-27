@@ -1,4 +1,4 @@
-/* TODO Fix time and remove infinite */
+/* TODO Fix time and remove 0s 1 forwards */
 .spinner, .filler {
     width: 50%;
     height: 100%;
@@ -12,11 +12,11 @@ body.dark :is(.spinner, .filler) {
 
 .spinner {
     transform-origin: 100% 50%;
-    animation: rota 10s linear infinite;
+    animation: rota var(--time) linear 0s 1 forwards;
 }
 
 .filler {
-    animation: fill 10s steps(1, end) infinite;
+    animation: fill var(--time) steps(1, end) 0s 1 forwards;
     left: 50%;
     opacity: 0;
 }
@@ -27,7 +27,7 @@ body.dark :is(.spinner, .filler) {
     position: absolute;
     opacity: 1;
     background: inherit;
-    animation: mask 10s steps(1, end) infinite;
+    animation: mask var(--time) steps(1, end) 0s 1 forwards;
 }
 
 @keyframes rota {

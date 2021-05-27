@@ -1,9 +1,19 @@
 // If CSS custom properties is not supported by browser
 if (typeof CSS.registerProperty !== 'function') {
-    // TODO
-    // add:  pie-timer-polyfill.css
-    // add:  <div class="spinner"></div>
-    //       <div class="filler"></div>
-    //       <div class="mask"></div>
-    //   to pie timer right above .edit-pie
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = 'css/pie-timer-polyfill.css';
+    
+    document.head.appendChild(style);
+    document.querySelectorAll('.pie').forEach(pie => {
+
+        const pieLabel = pie.querySelector('pie-label'),
+            spinner = document.createElement('div'),
+            filler = document.createElement('div'),
+            mask = document.createElement('div');
+
+        pie.insertBefore(spinner, pieLabel);
+        pie.insertBefore(filler, pieLabel);
+        pie.insertBefore(mask, pieLabel);
+    });
 }
