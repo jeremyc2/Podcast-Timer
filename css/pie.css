@@ -39,14 +39,6 @@ body.dark .pie {
     animation: timer-circle var(--time) linear 0s 1 forwards;
 }
 
-/* Is @property supported? Check CSS Houdini support to find out */
-@supports not (background-image: paint(checkerboard)) {
-    .start-pie {
-        /* TODO Change this to something useful for Safari */
-        animation: timer-circle var(--time) linear 0s 1 forwards;
-    }
-}
-
 .pie > div {
     content: attr(data-current-time);
     position: absolute;
