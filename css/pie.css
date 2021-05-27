@@ -39,7 +39,7 @@ body.dark .pie {
     animation: timer-circle var(--time) linear 0s 1 forwards;
 }
 
-.pie > div {
+.pie > .pie-label {
     content: attr(data-current-time);
     position: absolute;
     bottom: 10px;

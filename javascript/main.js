@@ -166,12 +166,12 @@ function setupPieTimer(pieTimer) {
     };
 
     pieTimer.style.setProperty('--time', `${seconds}s`);
-    pieTimer.querySelector('div').innerHTML = time;
+    pieTimer.querySelector('.pie-label').innerHTML = time;
 
     pieTimer.onclick = () => {
 
         var currTime = time;
-        pieTimer.querySelector('div').innerHTML = time;
+        pieTimer.querySelector('.pie-label').innerHTML = time;
     
         if(pieTimer.classList.contains('start-pie')) {
             pieTimer.classList.remove('start-pie');
@@ -188,7 +188,7 @@ function setupPieTimer(pieTimer) {
             if(timeIsZero(currTime)) {
                 clearInterval(pieTimer.interval);
             }
-            pieTimer.querySelector('div').innerHTML = currTime;
+            pieTimer.querySelector('.pie-label').innerHTML = currTime;
         }, 1000);
     }
 
