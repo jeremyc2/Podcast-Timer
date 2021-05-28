@@ -1,18 +1,30 @@
 [
     {
+        "user": 1,
         "time": "00:05",
-        "text": "Introduction"
+        "content": {
+            "label": "Introduction"
+        }
     },
     {
+        "user": 1,
         "time": "01:00",
-        "text": "People don't realize the danger of Chrome Extensions"
+        "content": {
+            "label": "People don't realize the danger of Chrome Extensions"
+        }
     },
     {
+        "user": 1,
         "time": "00:15",
-        "text": "Do you use Chrome Extensions? Why or why not?"
+        "content": {
+            "label": "Do you use Chrome Extensions? Why or why not?"
+        }
     },
     {
+        "user": 1,
         "time": "00:30",
-        "text": "Response"
+        "content": {
+            "label": "Response"
+        }
     }
 ]
