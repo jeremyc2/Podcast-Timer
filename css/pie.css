@@ -89,6 +89,16 @@ body.dark .edit-pie {
     --color: var(--color4);
 }
 
+@media screen and (max-width: 500px) {
+    #pies > div:nth-child(4n+3) {
+        display: none;
+    }
+    
+    #pies > div:nth-child(4n+0) {
+        display: none;
+    }
+}
+
 @keyframes timer-circle {
     to {
         --piePercent: 100%;
