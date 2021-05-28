@@ -23,6 +23,7 @@
     border: 2px solid black;
     background: conic-gradient(transparent var(--piePercent, 0%), var(--color) 0%);
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     transition: 0.01s linear;
     cursor: pointer;
 }
