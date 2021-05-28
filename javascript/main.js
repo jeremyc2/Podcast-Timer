@@ -244,7 +244,7 @@ document.querySelectorAll('.edit-pie').forEach(el => {
         timer.classList.remove('start-pie');
         clearInterval(timer.interval);
         var template = document.querySelector('#template-edit-pie');
-        timer.querySelector('div').innerHTML = template.innerHTML;
+        timer.querySelector('.pie-label').innerHTML = template.innerHTML;
         timer.querySelectorAll('.edit-pie-container, input').forEach(el => {
             el.addEventListener('blur', function(e) {
                 const time = [...timer.querySelectorAll('input')].map(input => input.value);
