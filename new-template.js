@@ -39,7 +39,7 @@ rl.question("New podcast template? (yes) ", res => {
         }
 
         fs.writeFileSync(`data/main/${nextFile}.json`, template);
-        fs.writeFileSync('javascript/default-id.json', `const defaultId = ${nextFile};`);
+        fs.writeFileSync('javascript/default-id.js', `const defaultId = ${nextFile};`);
 
         console.log(`data/main/${nextFile}.json has been added`);
 
