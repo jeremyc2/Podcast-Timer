@@ -11,21 +11,33 @@ body.dark :is(.spinner, .filler) {
 
 .spinner {
     transform-origin: 100% 50%;
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+}
+
+.start-pie .spinner {
     animation: rota var(--time) linear 0s 1 forwards;
 }
 
 .filler {
-    animation: fill var(--time) steps(1, end) 0s 1 forwards;
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
     left: 50%;
     opacity: 0;
 }
 
+.start-pie .filler {
+    animation: fill var(--time) steps(1, end) 0s 1 forwards;
+}
+
 .mask {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
     width: 50%;
     height: 100%;
     position: absolute;
     opacity: 1;
     background: inherit;
+}
+
+.start-pie .mask {
     animation: mask var(--time) steps(1, end) 0s 1 forwards;
 }
 

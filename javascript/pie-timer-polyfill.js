@@ -7,10 +7,14 @@ if (typeof CSS.registerProperty !== 'function') {
     document.head.appendChild(style);
     document.querySelectorAll('.pie').forEach(pie => {
 
-        const pieLabel = pie.querySelector('pie-label'),
+        const pieLabel = pie.querySelector('.pie-label'),
             spinner = document.createElement('div'),
             filler = document.createElement('div'),
             mask = document.createElement('div');
+
+        spinner.classList.add('spinner');
+        filler.classList.add('filler');
+        mask.classList.add('mask');
 
         pie.insertBefore(spinner, pieLabel);
         pie.insertBefore(filler, pieLabel);
