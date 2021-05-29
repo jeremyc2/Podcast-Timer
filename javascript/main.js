@@ -109,12 +109,12 @@ function build(data) {
             clearInterval(this.totalTimeInterval);
 
             var runningTime = '00:00';
-            this.setAttribute('data-time', runningTime);
+            totalTime.setAttribute('data-time', runningTime);
             totalTime.innerText = `Total Time: ${runningTime}`;
 
             this.totalTimeInterval = setInterval(() => {
                 runningTime = incrementTime(runningTime);
-                row.setAttribute('data-time', runningTime);
+                totalTime.setAttribute('data-time', runningTime);
                 totalTime.innerText = `Total Time: ${runningTime}`;
             }, 1000);
         });
