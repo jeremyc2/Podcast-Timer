@@ -91,11 +91,13 @@ body.dark .edit-pie {
 
 /* TODO Break into 2 so we go from 4 to 3 to 2 */
 @media screen and (max-width: 500px) {
-    #pies > div:nth-child(4n+3) {
+    #pies > div:nth-child(4n+0) {
         display: none;
     }
-    
-    #pies > div:nth-child(4n+0) {
+}
+
+@media screen and (max-width: 370px) {
+    #pies > div:nth-child(4n+3) {
         display: none;
     }
 }
