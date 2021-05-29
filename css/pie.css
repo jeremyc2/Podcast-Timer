@@ -89,7 +89,7 @@ body.dark .edit-pie {
     --color: var(--color4);
 }
 
-// TODO Break into 2 so we go from 4 to 3 to 2
+/* TODO Break into 2 so we go from 4 to 3 to 2 */
 @media screen and (max-width: 500px) {
     #pies > div:nth-child(4n+3) {
         display: none;
