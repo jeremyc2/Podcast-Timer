@@ -128,6 +128,7 @@ header > h2 {
     padding-right: 50px;
     border-bottom: 1px solid white;
     overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 body.dark .timer-label {
