@@ -107,6 +107,7 @@ header > h2 {
 .row {
     display: -webkit-box;
     width: 100%;
+    /* TODO: Responsive font size */
     font-size: 2rem;
     cursor: pointer;
 }
