@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <title>Podcast Timers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+    <script>
+        // TODO
+        const id = new URLSearchParams(document.location.search).get("id") ?? defaultId;
+    </script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        iframe {
+            height: 100vh;
+            width: 100%;
+            border: none;
+        }
+
+        .split {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .gutter {
+            background-color: #eee;
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
+        .gutter.gutter-horizontal {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+            cursor: col-resize;
+        }
+    </style>
+</head>
+<body>
+    <div class="split">
+        <div id="split-0">
+            <iframe src="index.html"></iframe>
+        </div>
+        <div id="split-1">
+            <iframe src="notes.html"></iframe>
+        </div>
+    </div>
+</body>
+<script>
+    Split(['#split-0', '#split-1']);
+</script>
+</html>
