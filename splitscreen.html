@@ -55,9 +55,9 @@
     const id = new URLSearchParams(document.location.search).get('id');
 
     if(id) {
-        document.querySelector('#homepage').src = `index.html?id=${id}`;
+        document.querySelector('#homepage').src = `index.html?notesOpenerActive=false&id=${id}`;
     } else {
-        document.querySelector('#homepage').src = 'index.html';
+        document.querySelector('#homepage').src = 'index.html?notesOpenerActive=false';
     }
     
     Split(['#split-0', '#split-1']);

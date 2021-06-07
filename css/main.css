@@ -78,14 +78,14 @@ header > h2 {
     background: hsl(0, 0%, 70%);
 }
 
-#notes-icon {
-    right: 0;
-    border-radius: 0 0 0 15px;
+header .icon:nth-of-type(1) {
+    border-radius: 0 0 15px 15px;
+    right: 43px;
 }
 
-#theme-icon {
-    right: 43px;
-    border-radius: 0 0 15px 15px;
+header .icon:nth-of-type(2) {
+    border-radius: 0 0 0 15px;
+    right: 0;
 }
 
 #notes-icon:hover, #theme-icon:hover {

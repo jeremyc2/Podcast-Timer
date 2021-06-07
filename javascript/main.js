@@ -218,7 +218,10 @@ function allowDigitOnly(e) {
 }
 
 const channel = new window.BroadcastChannel('app-data'),
-    id = new URLSearchParams(document.location.search).get("id") ?? defaultId,
+    params = new URLSearchParams(document.location.search),
+    id = params.get("id") ?? defaultId,
+    notesOpenerActive = params.has("notesOpenerActive") && 
+                            params.get("notesOpenerActive") == "true",
     themes = [
         {id: 'A', isDark: false},
         {id: 'B', isDark: false},
@@ -228,6 +231,11 @@ const channel = new window.BroadcastChannel('app-data'),
 
 var data,
     currentThemeIndex;
+
+if(!notesOpenerActive) {
+    const notesIcon = ocument.querySelector('#notes-icon');
+    notesIcon.parentElement.removeChild(notesIcon);
+}
 
 initTheme();
 
