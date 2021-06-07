@@ -38,7 +38,7 @@
 <body>
     <div class="split">
         <div id="split-0">
-            <iframe src="index.html"></iframe>
+            <iframe></iframe>
         </div>
         <div id="split-1">
             <iframe src="notes.html"></iframe>
@@ -50,6 +50,8 @@
 
     if(id) {
         document.querySelector('#homepage').src = `index.html?id=${id}`;
+    } else {
+        document.querySelector('#homepage').src = 'index.html';
     }
     
     Split(['#split-0', '#split-1']);
