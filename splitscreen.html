@@ -23,6 +23,10 @@
             flex-direction: row;
         }
 
+        .split > .split-section {
+            min-width: 400px;
+        }
+
         .gutter {
             background-color: #eee;
             background-repeat: no-repeat;
@@ -37,10 +41,10 @@
 </head>
 <body>
     <div class="split">
-        <div id="split-0">
+        <div class="split-section" id="split-0">
             <iframe id="homepage"></iframe>
         </div>
-        <div id="split-1">
+        <div class="split-section" id="split-1">
             <iframe src="notes.html"></iframe>
         </div>
     </div>
