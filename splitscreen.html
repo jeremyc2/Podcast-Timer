@@ -7,11 +7,6 @@
     <link rel="shortcut icon" href="img/logo.png" type="image/png">
     <title>Podcast Timers</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
-    <script>
-        // TODO
-        const id = new URLSearchParams(document.location.search).get("id");
-        
-    </script>
     <style>
         body {
             margin: 0;
@@ -51,6 +46,12 @@
     </div>
 </body>
 <script>
+    const id = new URLSearchParams(document.location.search).get('id');
+
+    if(id) {
+        document.querySelector('#homepage').src = `index.html?id=${id}`;
+    }
+    
     Split(['#split-0', '#split-1']);
 </script>
 </html>
