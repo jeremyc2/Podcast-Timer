@@ -74,7 +74,7 @@ header #tryme {
 
 header #tryme.fadeaway {
     visibility: visible;
-    animation: slidein 0.25s linear 0s 1 normal forwards,
+    animation: slidein 0.25s ease-out 0s 1 normal forwards,
                fadeout 1s linear 10s 1 normal forwards;
 }
 
