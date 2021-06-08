@@ -61,17 +61,30 @@ header {
 }
 
 header #tryme {
-    display: none !important;
+    display: flex;
+    visibility: hidden;
     background-color: black;
     width: 230px;
     color: white;
     height: 30px;
-    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0 0 5px 0;
     cursor: pointer;
     text-decoration: none;
+}
+
+header #tryme.fadeaway {
+    visibility: visible;
+    opacity: 1;
+    animation: fadeout 1s linear 5s 1 normal forwards;
+}
+
+@keyframes fadeout {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 .dark header #tryme {
