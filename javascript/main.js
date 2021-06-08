@@ -236,7 +236,7 @@ if(notesOpenerActive === false) {
     notesIcon.parentElement.removeChild(notesIcon);
 } else {
     var tryMeLink = document.querySelector('header #tryme');
-    tryMeLink.href = `${document.location.origin}/splitscreen.html`;
+    tryMeLink.href = `${document.location.origin}/splitscreen.html${document.location.search}`;
     tryMeLink.classList.add('fadeaway');
 }
 
