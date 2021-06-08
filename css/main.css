@@ -74,8 +74,19 @@ header #tryme {
 
 header #tryme.fadeaway {
     visibility: visible;
-    opacity: 1;
-    animation: fadeout 1s linear 10s 1 normal forwards;
+    animation: slidein 0.25s linear 0s 1 normal forwards,
+               fadeout 1s linear 10s 1 normal forwards;
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 100%;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeout {
