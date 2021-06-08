@@ -109,6 +109,13 @@ document.addEventListener('keydown', e => {
     }
 });
 
+window.addEventListener('resize', () => {
+    if(isScrolling) {
+        $('#app').stop();
+        startScroll();
+    }
+});
+
 document.addEventListener('keyup', e => {
     if(e.code == 'Space') {
         if(isScrolling) {
