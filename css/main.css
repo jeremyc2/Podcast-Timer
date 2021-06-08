@@ -250,19 +250,19 @@ body.dark .countdown {
     border-bottom: 0;
 }
 
-.row:nth-child(4n+1) {
+div.row:nth-of-type(4n+1) {
     --color: var(--color1);
 }
 
-.row:nth-child(4n+2) {
+div.row:nth-of-type(4n+2) {
     --color: var(--color2);
 }
 
-.row:nth-child(4n+3) {
+div.row:nth-of-type(4n+3) {
     --color: var(--color3);
 }
 
-.row:nth-child(4n+0) {
+div.row:nth-of-type(4n+0) {
     --color: var(--color4);
 }
 
