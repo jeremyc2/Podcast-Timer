@@ -61,14 +61,12 @@ header {
 }
 
 header #tryme {
-    display: flex;
+    display: block;
     visibility: hidden;
     width: fit-content;
-    padding: 5px;
+    padding: 8px 5px;
     background-color: black;
     color: white;
-    justify-content: center;
-    align-items: center;
     border-radius: 0 0 5px 0;
     cursor: pointer;
     text-decoration: none;
