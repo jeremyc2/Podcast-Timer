@@ -63,10 +63,10 @@ header {
 header #tryme {
     display: flex;
     visibility: hidden;
+    width: fit-content;
+    padding: 5px;
     background-color: black;
-    width: 230px;
     color: white;
-    height: 30px;
     justify-content: center;
     align-items: center;
     border-radius: 0 0 5px 0;
