@@ -8,7 +8,6 @@
 // including spaces and punctuation.
 // Source: Wikipedia
 const container = document.querySelector('#app code pre'),
-    spacer = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
     recommendedWPM = 150;
 
 var secondsPerLine = 10,
@@ -34,11 +33,11 @@ function getCharacterDimensions() {
 
 function updateFooter() {
     document.querySelector('footer').innerHTML = 
-        `${wordsPerMinute} WPM${
+        `<div>${wordsPerMinute} WPM${
                 wordsPerMinute == recommendedWPM? ' (Recommended)': ''
-            }${spacer}Total Duration &#8212; ` +
+            }</div><div>Total Duration &#8212; ` +
             `${Math.floor(milliseconds / 60000)}`.padStart(2,'0') + ':' + 
-            `${Math.floor((milliseconds % 60000) / 1000)}`.padStart(2,'0');
+            `${Math.floor((milliseconds % 60000) / 1000)}`.padStart(2,'0') + '</div>';
 }
 
 // Seconds per line to milliseconds for scroll time

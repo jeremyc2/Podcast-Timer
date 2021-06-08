@@ -53,4 +53,7 @@ footer {
     font-size: 1.75rem;
     color: #4CAF50;
     border-top: 1px solid white;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
 }
