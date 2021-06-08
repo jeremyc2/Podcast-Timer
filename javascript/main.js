@@ -234,6 +234,11 @@ var data,
 if(notesOpenerActive === false) {
     const notesIcon = document.querySelector('#notes-icon');
     notesIcon.parentElement.removeChild(notesIcon);
+} else {
+    var tryMeLink = document.querySelector('header #tryme');
+    tryMeLink.style.display  = 'block !important';
+
+    setTimeout(() => tryMeLink.style.display = '', 5000);
 }
 
 initTheme();

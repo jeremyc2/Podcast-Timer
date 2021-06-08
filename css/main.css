@@ -60,6 +60,25 @@ header {
                 0 16px 16px rgba(0,0,0,0.12);
 }
 
+header #tryme {
+    display: none !important;
+    background-color: black;
+    width: 230px;
+    color: white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dark header #tryme {
+    color: black;
+    background-color:white;
+}
+
 body.dark > header {
     background: black;
     color: white;
