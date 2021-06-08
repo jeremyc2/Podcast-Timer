@@ -77,7 +77,7 @@ header #tryme {
 header #tryme.fadeaway {
     visibility: visible;
     opacity: 1;
-    animation: fadeout 1s linear 5s 1 normal forwards;
+    animation: fadeout 1s linear 10s 1 normal forwards;
 }
 
 @keyframes fadeout {
