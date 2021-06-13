@@ -1,11 +1,380 @@
 [
     {
-        "user": 1,
-        "time": "00:00",
-        "content": {
-            "label": "Placeholder",
-            "notes": null,
-            "teleprompter": false
-        }
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "One of the largest cyber espionage attacks in history",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "What is a Supply Chain Attack?",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Orion Hack technical details",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Orion is IT performance monitoring platform used by Government and 18,000 customers",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "The password was solarwinds123",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Uncovered in Github source code",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Bipassed multi-factor authentication and posed as regular users",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Altered code/hijacked application build process",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Lasted several months without being detected",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Espionage vs. Sabotage",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "So far the US has done little to retaliate against dozens of similar attacks year after year",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "The Joe Biden Executive Order",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Russian group behind Solarwinds is at it again",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Phishing attack",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "3,000 email accounts targeted",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Critical infrastructure",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Colonial Pipeline paid 4.4 million ransom",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Energy industry increasingly under attack over past couple years as it’s become digitized",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Ransomware one of the greatest threats",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Paying ransoms discouraged by CISA and FBI",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "What we plan to do",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Department of Homeland Security plans to issue a Security Directive mandating companies report cybersecurity breaches",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "What we’ve done already",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "HIPAA",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Gramm-Leach-Bliley Act",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Homeland Security Act",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Federal Information Security Management Act (FISMA)",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Is the US becoming more of a target?",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Strong economy makes us a higher priority for organized criminals",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 1,
+            "time": "00:00",
+            "content": {
+                    "label": "Aggressive relationship with Iran, Russia, and China",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Cyber Defence Tactics",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Keeping up with the swift pace of technology",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Artificial Intelligence",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Transparency on uncovered attacks",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "How effective have these laws been?",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Rapid detection and physical override of automated systems",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Should we pay hackers their ransoms?",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "More frequent cyber security and privacy regulation",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Historically unpopular",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Congress is slow",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Businesses argue that regulation stifles innovation",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
+            "user": 2,
+            "time": "00:00",
+            "content": {
+                    "label": "Retaliation and hacking the enemy",
+                    "notes": null,
+                    "teleprompter": false
+            }
     }
 ]
