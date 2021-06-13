@@ -1,9 +1,18 @@
 [
     {
+            "user": null,
+            "time": "00:00",
+            "content": {
+                    "label": "Introduction",
+                    "notes": null,
+                    "teleprompter": false
+            }
+    },
+    {
             "user": 1,
             "time": "00:00",
             "content": {
-                    "label": "One of the largest cyber espionage attacks in history",
+                    "label": "Solarwinds: One of the largest cyber espionage attacks in history",
                     "notes": null,
                     "teleprompter": false
             }
@@ -138,7 +147,7 @@
             "user": 2,
             "time": "00:00",
             "content": {
-                    "label": "Critical infrastructure",
+                    "label": "Colonial Pipeline: Critical infrastructure",
                     "notes": null,
                     "teleprompter": false
             }
